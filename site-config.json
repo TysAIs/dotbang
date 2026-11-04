@@ -1,6 +1,15 @@
 {
   "brand": "dotBANG",
   "logo_mark": ".!",
+  "logo_mark_asset": "assets/brand/mark.svg",
+  "logo_mark_asset_signal": "assets/brand/mark-signal.svg",
+  "logo_mark_asset_inverse": "assets/brand/mark-inverse.svg",
+  "palette": {
+    "field": "#000000",
+    "ink": "#FFFFFF",
+    "signal": "#6CACE4",
+    "rule": "Three values only, alpha steps allowed. Signal never on white (2.43:1). Source: DOTBANG-DESIGN-LANGUAGE-2026-11-04.md"
+  },
   "domain": null,
   "domain_status": "TBD — awaiting Tyler's pick. Candidates checked 2026-11-03 via RDAP: dotbang.com taken/parked for sale (HugeDomains since 2014); dotbang.ai, dotbang.labs, dotbang.io not-registered. Do not register, do not publish a canonical URL, do not add a sitemap domain until Tyler picks.",
   "canonical_url": null,
