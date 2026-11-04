@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# No sitemap yet: the canonical domain is undecided (site-config.json).
+# Add https://<chosen-domain>/sitemap.xml the day Tyler picks a domain.
