@@ -1,0 +1,43 @@
+/* dotBANG — plain CSS, no framework, no build step. */
+:root {
+  --bg: #0c0e12;
+  --panel: #14181f;
+  --ink: #e8ecf1;
+  --muted: #9aa5b1;
+  --accent: #ffb000;
+  --line: #262d38;
+  --max: 880px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px 64px; }
+header.site {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+header.site .wrap { display: flex; align-items: baseline; gap: 16px; padding-bottom: 0; }
+.brand { font-weight: 800; font-size: 22px; letter-spacing: .02em; color: var(--ink); text-decoration: none; }
+.brand .mark { color: var(--accent); }
+nav { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+nav a:hover, nav a[aria-current="page"] { color: var(--ink); }
+h1 { font-size: 34px; line-height: 1.2; margin: 40px 0 12px; }
+h2 { font-size: 22px; margin: 36px 0 8px; }
+.lede { font-size: 19px; color: var(--muted); }
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px 18px; margin: 14px 0;
+}
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; color: var(--muted); }
+.todo {
+  border: 1px dashed var(--accent); border-radius: 10px;
+  padding: 14px 16px; color: var(--muted); margin: 14px 0;
+}
+.todo strong { color: var(--accent); }
+footer.site { border-top: 1px solid var(--line); padding: 20px 0; color: var(--muted); font-size: 13px; }
+code { background: var(--panel); padding: 1px 6px; border-radius: 4px; font-size: 14px; }

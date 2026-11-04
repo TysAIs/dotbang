@@ -1,0 +1,20 @@
+{
+  "status": "Seeded 2026-11-03 with real, public TysAIs repos only. Every URL was verified to exist via gh at seed time. Add a resource only with a real URL and a one-line description of what it actually is.",
+  "resources": [
+    {
+      "title": "GB10 setup standard",
+      "url": "https://github.com/TysAIs/gb10-ops",
+      "description": "Setup standard for any GB10 device: GPU/CPU clock caps, pinned kernel, headless + hardening, fabric clustering for any node count."
+    },
+    {
+      "title": "Gauntlet benchmark",
+      "url": "https://github.com/TysAIs/slm-gauntlet",
+      "description": "Benchmark for sub-12B models: agent capability, structured output, retrieval, coding, instruction-following + throughput. Reproducible, deterministic scoring."
+    },
+    {
+      "title": "xPST",
+      "url": "https://github.com/TysAIs/xPST",
+      "description": "Free, local cross-posting for short-form video (YouTube Shorts, Instagram Reels, X). TikTok is supported as a source, not a publish destination."
+    }
+  ]
+}
