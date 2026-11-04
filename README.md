@@ -32,6 +32,18 @@ Why: the launch blocker is domain + affiliate list, not tooling. A zero-build si
 
 Manual fallback: Settings → Pages → Deploy from branch → `main` / (root).
 
+## Brand assets
+
+The `.!` mark is an asset, not typed characters: see `assets/brand/` for the
+construction rules, the three legal colour states, the raster set and the
+platform sizes (avatar 400×400, banner 1500×500, cover 1280×720). Rebuild with
+`python3 scripts/build_brand_assets.py`.
+
+Palette is fixed at `#000000` field, `#FFFFFF` ink, `#6CACE4` signal — three
+values, alpha steps only, never accent text on white. Type is self-hosted from
+`assets/fonts/` (Inter, JetBrains Mono, Silkscreen, all OFL) so the site makes no
+third-party font requests.
+
 ## Privacy rule
 
 No personal data, real IPs, hostnames, emails, or internal URLs on the public site. Enforced by `scripts/privacy-audit.py` in CI and locally:

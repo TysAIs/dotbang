@@ -1,43 +1,110 @@
-/* dotBANG — plain CSS, no framework, no build step. */
+/* dotBANG — plain CSS, no framework, no build step.
+   Palette, type and geometry follow DOTBANG-DESIGN-LANGUAGE-2026-11-04.md
+   (§2 tokens, §3.1 module grid, §3.4 type stack, §6 token diff).
+   Three values only: #000000 field, #FFFFFF ink, #6CACE4 signal.
+   Alpha steps of those three are allowed. No radius, no blur, no glow. */
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/inter-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/jetbrains-mono-latin-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silkscreen";
+  src: url("fonts/silkscreen-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Silkscreen";
+  src: url("fonts/silkscreen-700-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --bg: #0c0e12;
-  --panel: #14181f;
-  --ink: #e8ecf1;
-  --muted: #9aa5b1;
-  --accent: #ffb000;
-  --line: #262d38;
-  --max: 880px;
+  --db-field: #000000;
+  --db-ink: #ffffff;
+  --db-signal: #6cace4;
+  --db-muted: rgba(255, 255, 255, .6);
+  --db-hairline: rgba(255, 255, 255, .12);
+  --db-fill: rgba(255, 255, 255, .06);
+  --db-max: 880px;
+  --db-step: 160ms;
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 0; background: var(--db-field); color: var(--db-ink);
+  font: 16px/1.6 "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
-a { color: var(--accent); }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px 64px; }
+a { color: var(--db-signal); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+a:hover { color: var(--db-ink); }
+:focus-visible { outline: 2px solid var(--db-signal); outline-offset: 2px; }
+.wrap { max-width: var(--db-max); margin: 0 auto; padding: 0 20px 64px; }
 header.site {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--db-hairline);
   padding: 18px 0;
 }
-header.site .wrap { display: flex; align-items: baseline; gap: 16px; padding-bottom: 0; }
-.brand { font-weight: 800; font-size: 22px; letter-spacing: .02em; color: var(--ink); text-decoration: none; }
-.brand .mark { color: var(--accent); }
+header.site .wrap { display: flex; align-items: center; gap: 16px; row-gap: 12px; flex-wrap: wrap; padding-bottom: 0; }
+.brand {
+  font-weight: 800; font-size: 22px; letter-spacing: .02em;
+  color: var(--db-ink); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+/* The mark is an asset, not two typed characters: fixed 12x20 on the 4px module. */
+.brand .mark, footer.site .mark { display: block; width: 12px; height: 20px; flex: none; }
 nav { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; }
-nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
-nav a:hover, nav a[aria-current="page"] { color: var(--ink); }
-h1 { font-size: 34px; line-height: 1.2; margin: 40px 0 12px; }
+nav a {
+  color: var(--db-muted); text-decoration: none;
+  font-family: "Silkscreen", monospace; font-size: 16px; font-weight: 400;
+  letter-spacing: .04em; text-transform: uppercase; line-height: 1;
+}
+nav a:hover, nav a[aria-current="page"] { color: var(--db-ink); }
+h1 { font-size: 34px; line-height: 1.2; margin: 40px 0 12px; letter-spacing: -.01em; text-transform: uppercase; }
 h2 { font-size: 22px; margin: 36px 0 8px; }
-.lede { font-size: 19px; color: var(--muted); }
+h3 { font-size: 17px; }
+.lede { font-size: 19px; color: var(--db-muted); }
 .card {
-  background: var(--panel); border: 1px solid var(--line);
-  border-radius: 10px; padding: 16px 18px; margin: 14px 0;
+  background: transparent; border: 1px solid var(--db-hairline);
+  border-radius: 0; padding: 16px 18px; margin: 14px 0;
 }
 .card h3 { margin: 0 0 6px; font-size: 17px; }
-.card p { margin: 0; color: var(--muted); }
+.card p { margin: 0; color: var(--db-muted); }
 .todo {
-  border: 1px dashed var(--accent); border-radius: 10px;
-  padding: 14px 16px; color: var(--muted); margin: 14px 0;
+  border: 2px dashed var(--db-signal); border-radius: 0;
+  padding: 14px 16px; color: var(--db-muted); margin: 14px 0;
 }
-.todo strong { color: var(--accent); }
-footer.site { border-top: 1px solid var(--line); padding: 20px 0; color: var(--muted); font-size: 13px; }
-code { background: var(--panel); padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+.todo strong { color: var(--db-signal); }
+footer.site {
+  border-top: 1px solid var(--db-hairline); padding: 20px 0;
+  color: var(--db-muted); font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+}
+footer.site .wrap { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.footer-brand { display: inline-flex; align-items: center; gap: 6px; color: var(--db-ink); }
+code {
+  background: var(--db-fill); border: 1px solid var(--db-hairline);
+  padding: 1px 6px; border-radius: 0;
+  font-family: "JetBrains Mono", monospace; font-size: 14px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color var(--db-step) steps(2); }
+}
+@media (max-width: 560px) {
+  nav { margin-left: 0; flex: 1 0 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
