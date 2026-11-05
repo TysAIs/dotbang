@@ -2,13 +2,21 @@
 
 A free hub for local AI under the dotbang brand.
 
-**Concept:** Give away free knowledge for credibility. Monetize around it with merch and USB one-click starter kits. **Not a course funnel.**
+**Concept:** Earn an audience with free, verifiable knowledge about running AI locally, and monetize that audience. Merch and USB starter kits are downstream of the audience — never the thesis. **Not a course funnel.**
 
 ## Status
 
 - Launched scaffold: Nov 2026 weekend target (kanban t_e951c113)
 - Domain: **TBD — do not register or publish a canonical domain until Tyler picks.** Candidates checked Nov 3 via RDAP: dotbang.com taken / parked for sale (HugeDomains since 2014, do not plan around it); dotbang.ai, dotbang.labs, dotbang.io returned not-registered. The `.io` in the original pitch was a TLD, not a pun. The `.!` mark is the logo, not a TLD.
 - Until a domain is chosen, the site deploys to GitHub Pages and carries **no canonical URL, no sitemap domain, and no analytics**.
+
+## Business framing (fixed 2026-11-05)
+
+Earlier drafts said "the merch is the business". That was wrong and it is corrected everywhere in this repo.
+
+- **The business is the audience.** @dot___bang on Instagram and TikTok, grown niche-first: local AI, measured claims, no funnel.
+- **The knowledge stays free.** It is what earns the audience; nothing on the learn page may sit behind a purchase.
+- **Merch and USB kits are downstream.** They are what an audience can eventually buy. They never lead, and no page claims they are the point.
 
 ## Pages
 
