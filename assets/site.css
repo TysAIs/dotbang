@@ -11,6 +11,10 @@
    so the vendored pack file stays byte-identical to its source. ---- */
 .brand .wordmark{text-transform:none;letter-spacing:.14em}
 .foot-brand{text-transform:none;letter-spacing:.12em}
+/* Tyler's brand casing rule (2026-11-05): the brand is always written dotBANG.
+   Uppercase label styles must not turn it into DOTBANG, so the brand is exempt
+   inside any uppercase context. Do not remove without the same rule changing. */
+.wm,#svc-h .wm{text-transform:none;letter-spacing:.06em}
 
 /* ---- inner pages: a page statement, not a hero ---- */
 .page-hero{max-width:1280px;margin:0 auto;padding:200px 48px 80px;
