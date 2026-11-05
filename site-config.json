@@ -1,11 +1,31 @@
 {
   "brand": "dotBANG",
+  "brand_casing": "dotBANG — dot lowercase, BANG uppercase. .! in code and as the mark.",
   "logo_mark": ".!",
   "domain": null,
   "domain_status": "TBD — awaiting Tyler's pick. Candidates checked 2026-11-03 via RDAP: dotbang.com taken/parked for sale (HugeDomains since 2014); dotbang.ai, dotbang.labs, dotbang.io not-registered. Do not register, do not publish a canonical URL, do not add a sitemap domain until Tyler picks.",
   "canonical_url": null,
   "analytics": null,
-  "launch_target": "Weekend of Nov 7-8, 2026 (scaffold live before domain; domain swap is a one-line change here)",
-  "concept": "A hub for local AI. Free knowledge earns an audience; the audience is the business. Merch and USB starter kits are downstream of that audience, not the reason for it. Not a course funnel.",
+  "positioning": "Consulting front door: AI systems built on a company's own data. Five screens, one daily refresh, a brief the decision-maker can read in twenty minutes.",
+  "concept": "The audience is the business; the knowledge stays free; merch and USB starter kits are downstream. The paid work is AI systems for companies with data they cannot use.",
+  "contact": {
+    "primary": "https://ig.me/m/dot___bang",
+    "primary_label": "@dot___bang (Instagram DM)",
+    "secondary": "https://github.com/TysAIs",
+    "note": "No form, no displayed email — the privacy rule forbids personal data in public files."
+  },
+  "design_system": {
+    "direction": "DIR-06 BLACKOUT, refined 2026-11-05",
+    "source_pack": "dotbang-brand-2026-11-05",
+    "field": "#000000",
+    "ink": "#FFFFFF",
+    "signal": "#6CACE4",
+    "type_scale": { "display_px": [150, 100, 66, 44], "body_px": 18, "label_floor_px": 11 },
+    "rules": "Three colours only. No radius, no blur, no gradient. Hairlines are 1px at 10-12% ink."
+  },
+  "entity": {
+    "legal_name": null,
+    "status": "Utah LLC not yet filed. Footer reads 'Utah, United States' until the certificate exists, then flips to dotBANG LLC."
+  },
   "privacy_rule": "No personal data, real IPs, hostnames, emails, or internal URLs in any public file."
 }

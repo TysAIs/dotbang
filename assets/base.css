@@ -1,0 +1,64 @@
+/* ==========================================================================
+   dotBANG direction pack — shared base
+   Reset + the canonical sample-page content. Directions override everything
+   visual; nothing here picks a look. Three colours only, ever:
+     #000000 field · #FFFFFF ink · #6CACE4 signal
+   ========================================================================== */
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#000;color:#fff;font-family:"Inter",sans-serif;font-size:16px;line-height:1.6;
+     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul{list-style:none;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* the mark: exact 4-unit module geometry, 3 modules wide x 5 tall */
+.mark{width:12px;height:20px;fill:currentColor;flex:0 0 auto}
+.mark .m-dot{fill:currentColor}
+.mark.accent-dot .m-dot-a{fill:#6CACE4}
+
+/* content is identical in every direction; directions decide treatment */
+.wrap{width:100%}
+.deco{display:none}          /* decorative layers off unless a direction asks */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* the sample page skeleton — no appearance decisions here */
+.shell{display:block}
+.site-head{}
+.brand{display:inline-flex;align-items:center;gap:8px}
+.brand .wordmark{}
+.nav{}
+.nav a{}
+.chip{}
+.ticker{}
+main{}
+.hero{}
+.hero-copy{}
+.eyebrow{}
+h1{}
+.lede{}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{}
+.hero-panel{}
+.panel-head{}
+.spec{display:flex;justify-content:space-between;gap:16px}
+.spec dt{}
+.spec dd{margin:0}
+.hero-mark{}
+.stats{}
+.stat{}
+.stat .n{}
+.stat .k{}
+.entries{}
+.card{}
+.card .ico{}
+.card h3{}
+.card p{}
+.card .more{}
+.callout{}
+.callout strong{}
+footer.site{}
+.foot-links{}

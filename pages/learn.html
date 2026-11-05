@@ -1,47 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-direction="DIR-06">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn — dotBANG</title>
-<meta name="description" content="Free local AI learning resources. Real repos, real guides, no funnel.">
+<meta name="description" content="Free local AI resources: real repos, real guides. Every link is a public repository you can clone today.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/dir06.css">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="../index.html">dotBANG<span class="mark">.!</span></a>
-    <nav>
+<body class="blackout">
+
+<div class="viewfinder" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="../index.html" aria-label="dotBANG home">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      <span class="wordmark">dotBANG</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
       <a href="../index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
       <a href="learn.html" aria-current="page">Learn</a>
-      <a href="giveaways.html">Giveaways</a>
-      <a href="merch.html">Merch</a>
-      <a href="affiliates.html">Affiliates</a>
+      <a href="../index.html#contact">Contact</a>
     </nav>
+    <span class="chip">OPEN NOTES</span>
   </div>
 </header>
-<main class="wrap">
-  <h1>Learn</h1>
-  <p class="lede">Free resources, linked to the real thing. Every link below is a public repo you can clone today.</p>
 
-  <div class="card">
-    <h3><a href="https://github.com/TysAIs/gb10-ops">GB10 setup standard</a></h3>
-    <p>Setup standard for any GB10 device: GPU/CPU clock caps, pinned kernel, headless + hardening, fabric clustering for any node count.</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://github.com/TysAIs/slm-gauntlet">Gauntlet benchmark</a></h3>
-    <p>Benchmark for sub-12B models: agent capability, structured output, retrieval, coding, instruction-following + throughput. Reproducible, deterministic scoring.</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://github.com/TysAIs/xPST">xPST</a></h3>
-    <p>Free, local cross-posting for short-form video (YouTube Shorts, Instagram Reels, X). TikTok is supported as a source, not a publish destination.</p>
-  </div>
+<main>
+  <section class="page-hero">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Free · no gate</p>
+    <h1>What dotBANG knows, in public.</h1>
+    <p class="lede">The work is paid for. The knowledge is not. Every link below is a real public repository you can clone today — nothing invented, nothing paywalled.</p>
+  </section>
 
-  <div class="todo"><strong>More coming.</strong> This list grows as resources are written and verified. A link only lands here with a real URL and an honest description — no invented guides.</div>
+  <div class="prose">
+    <div class="cards">
+      <article class="card">
+        <h3><a href="https://github.com/TysAIs/gb10-ops">GB10 setup standard</a></h3>
+        <p>Setup standard for any GB10 device: GPU and CPU clock caps, pinned kernel, headless and hardened, fabric clustering for any node count.</p>
+        <a class="more" href="https://github.com/TysAIs/gb10-ops">Open the repo</a>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/TysAIs/slm-gauntlet">Gauntlet benchmark</a></h3>
+        <p>Benchmark for sub-12B models: agent capability, structured output, retrieval, coding, instruction following and throughput. Reproducible, deterministic scoring.</p>
+        <a class="more" href="https://github.com/TysAIs/slm-gauntlet">Open the repo</a>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/TysAIs/xPST">xPST</a></h3>
+        <p>Free, local cross-posting for short-form video: YouTube Shorts, Instagram Reels, X. TikTok is supported as a source, not a publish destination.</p>
+        <a class="more" href="https://github.com/TysAIs/xPST">Open the repo</a>
+      </article>
+    </div>
+    <p class="note">This list grows only when something is written and verified. No invented guides.</p>
+  </div>
 </main>
+
 <footer class="site">
-  <div class="wrap">dotBANG<span style="color:var(--accent)">.!</span> — local AI, free knowledge first.</div>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      dotBANG
+    </div>
+    <div class="foot-links">
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="learn.html">Learn</a>
+      <a href="merch.html">Merch</a>
+      <a href="giveaways.html">Giveaways</a>
+      <a href="affiliates.html">Affiliates</a>
+    </div>
+    <p class="foot-note">AI systems, built on your own data. Utah, United States.</p>
+  </div>
 </footer>
+
 </body>
 </html>

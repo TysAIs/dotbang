@@ -1,0 +1,126 @@
+/* ==========================================================================
+   dotBANG site — page-level blocks on top of DIR-06 BLACKOUT.
+   Consumes the 2026-11-05 brand pack: type scale, spacing rhythm, hairlines
+   and the three-colour palette come from assets/dir06.css. Nothing here
+   introduces a new colour, a radius, a gradient or a shadow.
+   ========================================================================== */
+
+/* ---- brand casing: the wordmark is written dotBANG, never set in caps.
+   Tyler's rule (2026-11-05): dot lowercase, BANG uppercase, .! in code.
+   The pack's uppercase+tracking treatment is overridden here, not in dir06.css,
+   so the vendored pack file stays byte-identical to its source. ---- */
+.brand .wordmark{text-transform:none;letter-spacing:.14em}
+.foot-brand{text-transform:none;letter-spacing:.12em}
+
+/* ---- inner pages: a page statement, not a hero ---- */
+.page-hero{max-width:1280px;margin:0 auto;padding:200px 48px 80px;
+  border-bottom:1px solid var(--ink-10)}
+.page-hero .eyebrow{margin-bottom:40px}
+.page-hero h1{font-size:var(--t03-display-3);line-height:var(--lh-03);
+  letter-spacing:var(--tr-03);margin:0 0 32px;max-width:24ch}
+.page-hero .lede{margin-bottom:0;max-width:56ch}
+
+/* ---- prose ---- */
+.prose{max-width:760px;margin:0 auto;padding:96px 48px}
+.prose h2{font-size:var(--t04-display-4);font-weight:500;letter-spacing:var(--tr-04);
+  line-height:var(--lh-04);margin:80px 0 24px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-family:"JetBrains Mono",monospace;font-size:var(--t10-label);
+  font-weight:400;letter-spacing:var(--tr-10);text-transform:uppercase;
+  color:var(--ink-56);margin:56px 0 20px}
+.prose p{font-size:var(--t06-body-l);line-height:var(--lh-06);color:var(--ink-62);
+  margin:0 0 24px;max-width:68ch}
+.prose p strong{color:var(--ink);font-weight:500}
+.prose ul,.prose ol{margin:0 0 24px;padding:0 0 0 0;max-width:68ch}
+.prose li{font-size:var(--t06-body-l);line-height:var(--lh-06);color:var(--ink-62);
+  padding:10px 0 10px 24px;border-top:1px solid var(--ink-10);position:relative}
+.prose li::before{content:"—";position:absolute;left:0;color:var(--signal)}
+.prose ol{counter-reset:n}
+.prose ol li{counter-increment:n}
+.prose ol li::before{content:counter(n,decimal-leading-zero);font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);color:var(--ink-56)}
+.prose a{color:var(--ink);border-bottom:1px solid var(--ink-28);padding-bottom:1px}
+.prose a:hover{color:var(--signal);border-color:var(--signal)}
+.prose .note{font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:.12em;color:var(--ink-56);text-transform:uppercase;margin:48px 0 0}
+
+/* ---- services ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--ink-12)}
+.svc{padding:48px 32px 48px 0;border-bottom:1px solid var(--ink-12)}
+.svc + .svc{padding-left:32px;border-left:1px solid var(--ink-10)}
+.svc .num{display:block;font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:var(--tr-12);color:var(--signal);margin-bottom:24px}
+.svc h3{font-size:var(--t04-display-4);font-weight:500;letter-spacing:var(--tr-04);
+  line-height:var(--lh-04);margin:0 0 20px}
+.svc p{font-size:var(--t07-body);line-height:var(--lh-07);color:var(--ink-62);margin:0 0 20px}
+.svc dl{margin:0}
+.svc dt{font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-56);
+  padding-top:12px;border-top:1px solid var(--ink-10)}
+.svc dd{margin:4px 0 0;font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);color:var(--ink-62);letter-spacing:.06em}
+
+/* ---- fact table ---- */
+.facts{width:100%;border-collapse:collapse;margin:0 0 32px}
+.facts th,.facts td{text-align:left;vertical-align:top;padding:16px 24px 16px 0;
+  border-top:1px solid var(--ink-12);font-size:var(--t07-body);line-height:var(--lh-07)}
+.facts th{font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-56);
+  width:34%}
+.facts td{color:var(--ink-62)}
+.facts td strong{color:var(--ink);font-weight:500}
+
+/* ---- case study ---- */
+.case-top{max-width:1280px;margin:0 auto;padding:200px 48px 0}
+.case-top .tag{display:inline-block;font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);letter-spacing:var(--tr-12);text-transform:uppercase;
+  color:var(--signal);border:1px solid rgba(108,172,228,.4);padding:8px 12px;
+  margin-bottom:40px}
+.case-top h1{font-size:var(--t03-display-3);line-height:var(--lh-03);
+  letter-spacing:var(--tr-03);margin:0 0 32px;max-width:26ch}
+.case-top .lede{max-width:52ch}
+
+/* ---- contact ---- */
+.contact{border-top:1px solid var(--ink-10);background:var(--field)}
+.contact-in{max-width:1280px;margin:0 auto;padding:160px 48px}
+.contact h2{font-size:var(--t03-display-3);line-height:var(--lh-03);
+  letter-spacing:var(--tr-03);margin:0 0 32px;max-width:20ch}
+.contact p{font-size:var(--t06-body-l);line-height:var(--lh-06);color:var(--ink-62);
+  max-width:52ch;margin:0 0 56px}
+.contact-links{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid var(--ink-12);max-width:820px}
+.contact-links a{display:block;padding:32px 32px 32px 0;border-bottom:1px solid var(--ink-12);
+  font-size:var(--t04-display-4);font-weight:500;letter-spacing:var(--tr-04);
+  line-height:var(--lh-04)}
+.contact-links a + a{padding-left:32px;border-left:1px solid var(--ink-10)}
+.contact-links a span{display:block;font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-56);margin-top:12px}
+.contact-links a:hover{color:var(--signal)}
+.contact-links a:hover span{color:var(--ink-62)}
+
+/* ---- misc ---- */
+.inline-link{font-family:"JetBrains Mono",monospace;font-size:var(--t11-label-s);
+  letter-spacing:var(--tr-11);text-transform:uppercase;color:var(--ink-56);
+  border-bottom:1px solid rgba(255,255,255,.24);padding-bottom:4px}
+.inline-link:hover{color:var(--signal);border-color:var(--signal)}
+.plain-list{list-style:none;padding:0;margin:0}
+.plain-list li{border-top:1px solid var(--ink-10);padding:20px 0}
+
+@media (max-width:900px){
+  .page-hero{padding:140px 20px 56px}
+  .case-top{padding:140px 20px 0}
+  .prose{padding:64px 20px}
+  .prose h2{font-size:var(--t04-display-4);margin-top:56px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc{padding:40px 0}
+  .svc + .svc{padding-left:0;border-left:0}
+  .facts th{width:auto;display:block;padding-bottom:4px}
+  .facts td{display:block;padding-top:4px}
+  .facts tr{display:block;border-top:1px solid var(--ink-12);padding:16px 0}
+  .facts th,.facts td{border-top:0}
+  .contact-in{padding:96px 20px}
+  .contact-links{grid-template-columns:1fr}
+  .contact-links a + a{padding-left:0;border-left:0}
+}
