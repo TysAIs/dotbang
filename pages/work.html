@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-direction="DIR-06">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Territory Brief — Allied Group and Hackney Ladish — dotBANG</title>
+<meta name="description" content="Case study: a five-screen Territory Brief for a national pipe-fittings sales organisation, built on synthetic data shaped to their world, verified in a real browser, with an eight-week version one planned.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/dir06.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="blackout">
+
+<div class="viewfinder" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="../index.html" aria-label="dotBANG home">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      <span class="wordmark">dotBANG</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="learn.html">Learn</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <span class="chip">CASE 001</span>
+  </div>
+</header>
+
+<main>
+  <section class="case-top">
+    <span class="tag">Prototype delivered · version one in scoping</span>
+    <h1>The Territory Brief.</h1>
+    <p class="lede">A national sales organisation that could not see its own numbers before a customer meeting. Five screens, one daily refresh, and a brief written from the rows themselves.</p>
+  </section>
+
+  <div class="prose">
+    <h2>The ask</h2>
+    <p>Allied Group and Hackney Ladish sell pipe fittings and valves, including into data-centre builds. Their ERP is called 4U. It is too slow to open when a rep is sitting in a truck outside a branch, so the number the rep walks in with is whatever they remember from last month.</p>
+    <p>The brief asked for a web dashboard for every rep nationwide: data from the daily 4U drop, each rep scoped to their own territory, current sales and weights, quarter-on-quarter and year-on-year movement, colour-coded so problem areas are obvious, and no manual updates from the sales team. The stated success test was one sentence: a rep clicks through in about twenty minutes and knows their territory before a meeting.</p>
+
+    <h2>What was built</h2>
+    <p>A five-screen prototype — overview, quarter and year comparisons, accounts, an AI brief, and follow-ups — running on <strong>11,232 rows of synthetic data</strong> shaped to their world: eight territories, PVF distributors and contractors, data-centre builders, six product lines sold by weight. Territory scoping is enforced by role: the national view sees the roll-up, a rep sees one territory and cannot switch out of it.</p>
+    <p>Every number on every screen is computed from the ingested rows, so what a client clicks is what version one would do. The AI brief is generated from those rows, not from a general model guessing.</p>
+    <h3>How it was verified</h3>
+    <ul>
+      <li>A real headless browser session drove the prototype: <strong>20 checks, 0 failures</strong></li>
+      <li>Every territory's year-to-date and year-on-year figure on screen compared against an independently computed ground truth</li>
+      <li>Every view opened by clicking, every question chip exercised, the role lock and the follow-up toggle tested, console errors asserted to be zero</li>
+      <li>Two real defects found this way and fixed: a period filter that silently returned an empty quarter, and a formatter that crashed on an aggregate object. Neither was visible in a screenshot.</li>
+    </ul>
+
+    <h2>The demo</h2>
+    <p>The prototype is public and runs on made-up numbers shaped like the real ones. It takes about twenty minutes to click through, which is the client's own standard.</p>
+    <p><a class="inline-link" href="https://tysais.github.io/hackney-territory-brief-preview/">Open the territory brief prototype</a></p>
+    <p class="note">Synthetic data. No client data is public.</p>
+
+    <h2>What version one adds</h2>
+    <p>The same five screens wired to a real drop: format-agnostic ingestion with validation and alerting, per-rep accounts with server-side territory scoping, an unattended daily refresh that keeps the last good day live when a drop is late, rollout to every rep, and a handover runbook. Eight weeks, phased, pilot in week five.</p>
+
+    <h2>What is not proven yet</h2>
+    <p>No real 4U data has been read — that is week one of the project and it is deliberately the first paid step. The prototype was verified in one browser engine; mobile was checked at the narrowest width the test harness exposes, not on a physical device. Delivery time is a plan, not a measured build.</p>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="contact-in">
+      <h2>Same problem, different industry?</h2>
+      <p>The shape repeats wherever an old ERP meets a sales force on the road. Bring one data drop and we will tell you in a week whether it is readable.</p>
+      <div class="contact-links">
+        <a href="https://ig.me/m/dot___bang">Message on Instagram<span>@dot___bang</span></a>
+        <a href="https://github.com/TysAIs">Code and notes on GitHub<span>github.com/TysAIs</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      dotBANG
+    </div>
+    <div class="foot-links">
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="learn.html">Learn</a>
+      <a href="merch.html">Merch</a>
+      <a href="giveaways.html">Giveaways</a>
+      <a href="affiliates.html">Affiliates</a>
+    </div>
+    <p class="foot-note">AI systems, built on your own data. Utah, United States.</p>
+  </div>
+</footer>
+
+</body>
+</html>

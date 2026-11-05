@@ -1,0 +1,8 @@
+/* dotBANG — webfonts (subset copied from the 2026-11-05 brand pack, OFL-1.1).
+   Inter: body + display. JetBrains Mono: labels, data, code. No third face. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:block;src:url(inter-400-latin.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:block;src:url(inter-500-latin.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:block;src:url(inter-600-latin.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:block;src:url(inter-700-latin.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:block;src:url(jetbrains-mono-400-latin.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:700;font-display:block;src:url(jetbrains-mono-700-latin.woff2) format("woff2")}

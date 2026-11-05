@@ -1,54 +1,156 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-direction="DIR-06">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>dotBANG — local AI, free knowledge first</title>
-<meta name="description" content="dotBANG is a free hub for local AI. The knowledge stays free; the audience is the business, and merch follows it.">
+<title>dotBANG — AI systems built on your own data</title>
+<meta name="description" content="dotBANG builds AI systems that turn a company's own operational data into the twenty-minute answer before a meeting. Fixed scope, eight weeks to a first version, handed over with the source.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/dir06.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="index.html">dotBANG<span class="mark">.!</span></a>
-    <nav>
+<body class="blackout">
+
+<div class="viewfinder" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="index.html" aria-label="dotBANG home">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      <span class="wordmark">dotBANG</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
+      <a href="pages/services.html">Services</a>
+      <a href="pages/work.html">Work</a>
       <a href="pages/learn.html">Learn</a>
-      <a href="pages/giveaways.html">Giveaways</a>
-      <a href="pages/merch.html">Merch</a>
-      <a href="pages/affiliates.html">Affiliates</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <span class="chip">AVAILABLE FOR WORK</span>
   </div>
 </header>
-<main class="wrap">
-  <h1>Local AI, knowledge first.</h1>
-  <p class="lede">dotBANG is a free hub for running AI on your own hardware. The knowledge is the product — everything else is built around it, not in front of it.</p>
 
-  <h2>What this is</h2>
-  <p>Free, practical knowledge about local AI: setting it up, serving it, benchmarking it, and getting it running on hardware you own. No gate, no funnel, no course upsell.</p>
+<main>
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>AI systems · built on your data</p>
+        <h1>Your data,<br class="br-desk"> answered.</h1>
+        <p class="lede">dotBANG builds the system that turns a company's own records into the twenty-minute answer a decision-maker needs before a meeting. Built once, on your data, handed over with the source.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Start a project</a>
+          <a class="btn btn-ghost" href="pages/work.html">See the work</a>
+        </div>
+      </div>
 
-  <h2>How this works as a business</h2>
-  <p>The knowledge is free and stays free. It earns an audience — built on Instagram and TikTok, one narrow subject at a time, not bought. <strong>The audience is the business.</strong> Merch and USB one-click starter kits are what the audience can eventually buy; they follow the audience, they do not lead it.</p>
+      <aside class="hero-panel" aria-label="How an engagement runs">
+        <div class="panel-head"><span>ENGAGEMENT</span><span class="panel-code">REF 001</span></div>
+        <dl class="specs">
+          <div class="spec"><dt>Scope</dt><dd>fixed, written</dd></div>
+          <div class="spec"><dt>First version</dt><dd>8 weeks</dd></div>
+          <div class="spec"><dt>Pilot</dt><dd>week 5</dd></div>
+          <div class="spec"><dt>Source</dt><dd>handed over</dd></div>
+        </dl>
+        <p class="panel-note">Phased. Paid per phase. No deposit on the whole programme.</p>
+      </aside>
+    </div>
+  </section>
 
-  <h2>Start here</h2>
-  <div class="card">
-    <h3><a href="pages/learn.html">Learning resources</a></h3>
-    <p>Real, public repos and guides — nothing invented, nothing paywalled.</p>
+  <section class="stats" aria-label="The shape of the work">
+    <div class="wrap stats-in">
+      <div class="stat"><span class="n">08</span><span class="k">weeks to a first version</span></div>
+      <div class="stat"><span class="n">05</span><span class="k">screens, one daily refresh</span></div>
+      <div class="stat"><span class="n">20</span><span class="k">minutes to the brief</span></div>
+    </div>
+  </section>
+
+  <section class="entries" aria-labelledby="svc-h">
+    <h2 id="svc-h" class="section-h">What dotBANG builds</h2>
+    <div class="svc-grid">
+      <article class="svc">
+        <span class="num">01</span>
+        <h3>Territory and sales briefs</h3>
+        <p>The daily drop out of your ERP, read into per-rep views with quarter-on-quarter and year-on-year movement, the accounts that have gone quiet, and a plain-language brief generated from the rows themselves.</p>
+        <dl>
+          <dt>Built for</dt><dd>sales orgs with an ERP nobody opens on a phone</dd>
+          <dt>Proof</dt><dd><a class="inline-link" href="pages/work.html">The Territory Brief</a></dd>
+        </dl>
+      </article>
+      <article class="svc">
+        <span class="num">02</span>
+        <h3>Data plumbing and ingestion</h3>
+        <p>Format-agnostic loaders for CSV, TSV, Excel, JSON or fixed-width drops, with row-count and total validation against the previous day, alerting when a drop is late or malformed, and the last good day kept live.</p>
+        <dl>
+          <dt>Built for</dt><dd>data that exists but cannot be trusted or reached</dd>
+          <dt>Shape</dt><dd>scoped per system, attached to a build</dd>
+        </dl>
+      </article>
+      <article class="svc">
+        <span class="num">03</span>
+        <h3>Local AI and model operations</h3>
+        <p>Models running on hardware you own, kept healthy: serving checks, model swaps, version pinning, drift monitors that page a human, and a written runbook for the day something breaks at 2am.</p>
+        <dl>
+          <dt>Built for</dt><dd>teams who want the model inside their own walls</dd>
+          <dt>Shape</dt><dd>monthly, cancellable</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="entries" aria-labelledby="work-h" style="padding-top:0">
+    <h2 id="work-h" class="section-h">Work</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Allied Group and Hackney Ladish — Territory Brief</h3>
+        <p>A national sales organisation with an ERP too slow to open before a customer meeting. Scope written, five-screen prototype built on 11,232 synthetic rows shaped to their world, eight-week version one planned. Prototype delivered; version one in scoping.</p>
+        <a class="more" href="pages/work.html">Read the case</a>
+      </article>
+      <article class="card">
+        <h3>The cluster this runs on</h3>
+        <p>dotBANG's own inference runs on a four-node GB10 cluster at home, serving production agent workloads every day. That is where the model-operations practice comes from: not a slide, a system with a health check and an on-call human.</p>
+        <a class="more" href="pages/services.html">How engagements work</a>
+      </article>
+    </div>
+  </section>
+
+  <div class="callout-wrap">
+    <div class="callout">
+      <strong>How a project starts</strong>
+      <p>No dashboard without a data proof.</p>
+    </div>
   </div>
-  <div class="card">
-    <h3><a href="pages/giveaways.html">Giveaways</a></h3>
-    <p>Free stuff, on a schedule we actually keep. Rules published up front.</p>
-  </div>
-  <div class="card">
-    <h3><a href="pages/merch.html">Merch + USB starter kits</a></h3>
-    <p>The physical side of dotBANG. Designs and kits in progress — no fake store.</p>
-  </div>
 
-  <div class="todo"><strong>Not a course funnel.</strong> If you came here expecting a course pitch, that is not what this is. The knowledge is free. The audience is the business — grown on Instagram and TikTok, niche first. Merch follows the audience; it doesn't lead it.</div>
+  <section class="contact" id="contact">
+    <div class="contact-in">
+      <h2>Start with the data.</h2>
+      <p>Tell dotBANG what your team cannot see today and where the numbers live. One reply, then a thirty-minute call with one real data drop in front of us. No deck, no form.</p>
+      <div class="contact-links">
+        <a href="https://ig.me/m/dot___bang">Message on Instagram<span>@dot___bang</span></a>
+        <a href="https://github.com/TysAIs">Code and notes on GitHub<span>github.com/TysAIs</span></a>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer class="site">
-  <div class="wrap">dotBANG<span style="color:var(--accent)">.!</span> — local AI, free knowledge first. Domain announcement pending.</div>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      dotBANG
+    </div>
+    <div class="foot-links">
+      <a href="pages/services.html">Services</a>
+      <a href="pages/work.html">Work</a>
+      <a href="pages/learn.html">Learn</a>
+      <a href="pages/merch.html">Merch</a>
+      <a href="pages/giveaways.html">Giveaways</a>
+      <a href="pages/affiliates.html">Affiliates</a>
+    </div>
+    <p class="foot-note">AI systems, built on your own data. Utah, United States.</p>
+  </div>
 </footer>
+
 </body>
 </html>

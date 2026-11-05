@@ -1,41 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-direction="DIR-06">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Giveaways — dotBANG</title>
-<meta name="description" content="dotBANG giveaways. Rules published up front, always.">
+<meta name="description" content="dotBANG giveaways. Prize, dates and entry mechanic published before it opens.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/dir06.css">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="../index.html">dotBANG<span class="mark">.!</span></a>
-    <nav>
+<body class="blackout">
+
+<div class="viewfinder" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="../index.html" aria-label="dotBANG home">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      <span class="wordmark">dotBANG</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
       <a href="../index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
       <a href="learn.html">Learn</a>
-      <a href="giveaways.html" aria-current="page">Giveaways</a>
-      <a href="merch.html">Merch</a>
-      <a href="affiliates.html">Affiliates</a>
+      <a href="../index.html#contact">Contact</a>
     </nav>
+    <span class="chip">NO GATE</span>
   </div>
 </header>
-<main class="wrap">
-  <h1>Giveaways</h1>
-  <p class="lede">Free stuff for people who run AI locally. No entry fee, no email gate, no data retention beyond picking a winner.</p>
 
-  <div class="todo">
-    <strong>No live giveaway yet.</strong> The first giveaway — prize, dates, and entry mechanic — will be published here in full before it opens. Nothing is invented in advance.
+<main>
+  <section class="page-hero">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Giveaways</p>
+    <h1>Free stuff, with the rules printed first.</h1>
+    <p class="lede">No entry fee, no email gate, no data kept beyond picking a winner.</p>
+  </section>
+
+  <div class="prose">
+    <p><strong>No live giveaway yet.</strong> The first one — prize, dates and entry mechanic — will be published here in full before it opens. Nothing is invented in advance.</p>
+
+    <h2>Standing rules, every time</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Published up front</h3>
+        <p>Prize, open and close dates, how to enter, and how the winner is drawn. All on this page before the giveaway starts.</p>
+      </article>
+      <article class="card">
+        <h3>No data hoarding</h3>
+        <p>Entry takes the minimum needed to contact a winner. Nothing is sold, and nothing is added to a list without consent.</p>
+      </article>
+      <article class="card">
+        <h3>Winner announced publicly</h3>
+        <p>The draw is recorded and the winner is announced here. If a giveaway is cancelled, that is announced here too.</p>
+      </article>
+    </div>
   </div>
-
-  <h2>Standing rules (apply to every giveaway)</h2>
-  <div class="card"><h3>Published up front</h3><p>Prize, open/close dates, how to enter, and how the winner is drawn — all on this page before the giveaway starts.</p></div>
-  <div class="card"><h3>No data hoarding</h3><p>Entry takes the minimum needed to contact a winner. Nothing is sold, nothing is added to a list without consent.</p></div>
-  <div class="card"><h3>Winner announced publicly</h3><p>The draw is recorded and the winner is announced on this page. If a giveaway is cancelled, that is announced here too.</p></div>
 </main>
+
 <footer class="site">
-  <div class="wrap">dotBANG<span style="color:var(--accent)">.!</span> — local AI, free knowledge first.</div>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <svg class="mark" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      dotBANG
+    </div>
+    <div class="foot-links">
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="learn.html">Learn</a>
+      <a href="merch.html">Merch</a>
+      <a href="giveaways.html">Giveaways</a>
+      <a href="affiliates.html">Affiliates</a>
+    </div>
+    <p class="foot-note">AI systems, built on your own data. Utah, United States.</p>
+  </div>
 </footer>
+
 </body>
 </html>
