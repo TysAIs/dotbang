@@ -1,9 +1,10 @@
-import http.server, threading, urllib.request, functools, pathlib
+import http.server, os, threading, urllib.request, functools, pathlib
+PORT = int(os.environ.get("PORT", "8765"))
 handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(pathlib.Path.cwd()))
-srv = http.server.ThreadingHTTPServer(("127.0.0.1", 8765), handler)
+srv = http.server.ThreadingHTTPServer(("127.0.0.1", PORT), handler)
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 for p in ["/", "/pages/learn.html", "/pages/affiliates.html", "/pages/giveaways.html", "/pages/merch.html", "/assets/style.css", "/robots.txt", "/assets/favicon.svg"]:
-    with urllib.request.urlopen(f"http://127.0.0.1:8765{p}") as r:
+    with urllib.request.urlopen(f"http://127.0.0.1:{PORT}{p}") as r:
         body = r.read().decode("utf-8", "replace")
         print(p, r.status, len(body), "B")
         if p == "/":
