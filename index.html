@@ -3,52 +3,274 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>dotBANG — local AI, free knowledge first</title>
-<meta name="description" content="dotBANG is a free hub for local AI: knowledge first, merch and USB starter kits around it. Not a course funnel.">
+<title>dotBANG — local AI, built in the open</title>
+<meta name="description" content="dotBANG is where tysn.dev builds with AI in public: local models on owned hardware, benchmarks with receipts, and AI consulting for businesses. The knowledge is free. The audience is the business.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="dotBANG — local AI, built in the open">
+<meta property="og:description" content="Local AI content, free knowledge, and AI consulting. No gate, no course funnel.">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/dither-engine.js" defer></script>
 </head>
 <body>
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="index.html">dotBANG<span class="mark">.!</span></a>
-    <nav>
-      <a href="index.html" aria-current="page">Home</a>
+
+<div class="viewfinder" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html" aria-label="dotBANG home">
+      <img class="wordmark-img" src="assets/wordmark-d1.svg" alt="dotBANG" width="129" height="48">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#follow">Follow</a>
+      <a href="#consulting">Consulting</a>
       <a href="pages/learn.html">Learn</a>
       <a href="pages/giveaways.html">Giveaways</a>
       <a href="pages/merch.html">Merch</a>
-      <a href="pages/affiliates.html">Affiliates</a>
     </nav>
+    <span class="chip">Pre-launch</span>
   </div>
 </header>
-<main class="wrap">
-  <h1>Local AI, knowledge first.</h1>
-  <p class="lede">dotBANG is a free hub for running AI on your own hardware. The knowledge is the product — everything else is built around it, not in front of it.</p>
 
-  <h2>What this is</h2>
-  <p>Free, practical knowledge about local AI: setting it up, serving it, benchmarking it, and getting it running on hardware you own. No gate, no funnel, no course upsell.</p>
+<main>
+  <section class="hero">
+    <div class="field-wrap" aria-hidden="true">
+      <div class="field-floor" data-field-floor>
+        <p class="field-hint">
+          <span class="dot"></span><span>FIELD 01 · BAYER 8×8 · 4PX</span>
+          <span class="fh-move">· move the pointer</span>
+        </p>
+      </div>
+      <canvas class="field" data-field data-model="dither"></canvas>
+      <div class="field-block" data-field-block></div>
+    </div>
 
-  <h2>How it pays for itself</h2>
-  <p>Merch and USB one-click starter kits — physical things you can hold, built around the free knowledge on this site.</p>
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Free · open · no gate</p>
+        <h1>Local AI,<br>built in <span class="hl">the open</span><svg class="punct" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg></h1>
+        <p class="lede">dotBANG is where tysn.dev builds with AI in public: local models running on owned hardware, benchmarks with the receipts attached, and demos that start from a single prompt. The knowledge is free. The audience is the business.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#follow">Follow the build</a>
+          <a class="btn btn-ghost" href="#consulting">AI consulting</a>
+        </div>
+      </div>
 
-  <h2>Start here</h2>
-  <div class="card">
-    <h3><a href="pages/learn.html">Learning resources</a></h3>
-    <p>Real, public repos and guides — nothing invented, nothing paywalled.</p>
-  </div>
-  <div class="card">
-    <h3><a href="pages/giveaways.html">Giveaways</a></h3>
-    <p>Free stuff, on a schedule we actually keep. Rules published up front.</p>
-  </div>
-  <div class="card">
-    <h3><a href="pages/merch.html">Merch + USB starter kits</a></h3>
-    <p>The physical side of dotBANG. Designs and kits in progress — no fake store.</p>
-  </div>
+      <aside class="hero-panel" data-field-clear aria-label="The stack">
+        <div class="panel-head"><span>The stack</span><span class="panel-code">REF 001</span></div>
+        <dl class="specs">
+          <div class="spec"><dt>Serving</dt><dd>local, on owned hardware</dd></div>
+          <div class="spec"><dt>Models</dt><dd>open weights</dd></div>
+          <div class="spec"><dt>Cloud bill</dt><dd>0</dd></div>
+          <div class="spec"><dt>Gate</dt><dd>none</dd></div>
+        </dl>
+        <p class="panel-note">The same stack the consulting work is built on.</p>
+      </aside>
+    </div>
+  </section>
 
-  <div class="todo"><strong>Not a course funnel.</strong> If you came here expecting a course pitch, that is not what this is. The knowledge is free; the merch is the business.</div>
+  <section class="stats" aria-label="What this page is">
+    <div class="wrap stats-in">
+      <div class="stat"><span class="n">03</span><span class="k">entry points</span></div>
+      <div class="stat"><span class="n">00</span><span class="k">paywalls</span></div>
+      <div class="stat"><span class="n">01</span><span class="k">box you already own</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="follow">
+    <div class="wrap">
+      <p class="kicker">Follow the build</p>
+      <h2 class="section-h">The audience is<br>the product.</h2>
+      <p class="section-sub">Everything dotBANG makes starts as content: live builds, model tests, hardware projects, results shown either way. Follow along where you already scroll.</p>
+      <div class="cards c4">
+        <article class="card">
+          <span class="idx pink">01</span>
+          <h3><a href="https://www.tiktok.com/@dot___bang">TikTok</a></h3>
+          <p class="handle">@dot___bang</p>
+          <p>One-shot builds, live demos, and the cluster on camera.</p>
+          <a class="more" href="https://www.tiktok.com/@dot___bang">Watch</a>
+        </article>
+        <article class="card">
+          <span class="idx">02</span>
+          <h3><a href="https://www.instagram.com/dot___bang">Instagram</a></h3>
+          <p class="handle">@dot___bang</p>
+          <p>Builds, benchmarks, and behind the scenes.</p>
+          <a class="more" href="https://www.instagram.com/dot___bang">Follow</a>
+        </article>
+        <article class="card">
+          <span class="idx">03</span>
+          <h3><a href="https://www.youtube.com/@tysn_dev">YouTube</a></h3>
+          <p class="handle">@tysn_dev</p>
+          <p>Longer builds and full benchmark runs.</p>
+          <a class="more" href="https://www.youtube.com/@tysn_dev">Subscribe</a>
+        </article>
+        <article class="card">
+          <span class="idx">04</span>
+          <h3><a href="https://x.com/tysn_dev">X</a></h3>
+          <p class="handle">@tysn_dev</p>
+          <p>Notes, results, and works in progress.</p>
+          <a class="more" href="https://x.com/tysn_dev">Follow</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="consulting">
+    <div class="wrap">
+      <p class="kicker">dotBANG consulting</p>
+      <h2 class="section-h">AI systems<br>for businesses.</h2>
+      <p class="section-sub">The same local-first stack, built for companies. Set up hands-on with the client, then tuned for two to four weeks on feedback from the people who use it every day. Ongoing updates run under a service contract, and going fully on-premises is a planned later phase, not a rebuild.</p>
+      <div class="cards c3">
+        <article class="card">
+          <span class="idx">A</span>
+          <h3>Territory dashboards</h3>
+          <p>A fast, colour-coded snapshot a rep can read in twenty minutes before a meeting: sales, weights, quarter on quarter, year on year, refreshed automatically from the systems the business already runs.</p>
+        </article>
+        <article class="card">
+          <span class="idx">B</span>
+          <h3>A CRM of your own</h3>
+          <p>A full custom CRM built on dotBANG's own white-label platform, shaped to one company's pipeline instead of rented by the seat. Follow-up reminders and customer history included from day one.</p>
+        </article>
+        <article class="card">
+          <span class="idx">C</span>
+          <h3>AI throughout</h3>
+          <p>Plain-language summaries of what changed, alerts when a number moves, and follow-ups drafted before they are due. It runs on the client's own AI accounts and keys, never on ours.</p>
+        </article>
+      </div>
+      <div class="cta">
+        <a class="btn btn-ghost" href="https://www.instagram.com/dot___bang">Start a conversation</a>
+      </div>
+
+      <svg class="topo" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+        <path class="dim" d="M0,44 C160,30 300,50 470,38 C640,26 760,46 930,34 C1060,25 1140,36 1200,30"/>
+        <path d="M0,34 C180,18 330,42 500,28 C670,14 800,38 960,24 C1080,14 1150,26 1200,20"/>
+        <path class="dim" d="M0,24 C200,8 360,32 540,18 C720,4 840,28 990,14 C1090,5 1160,16 1200,10"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="kicker">Free knowledge</p>
+      <h2 class="section-h">Learn local AI.</h2>
+      <p class="section-sub">Real, public repos and guides. Nothing invented, nothing paywalled, every claim reproducible.</p>
+      <div class="cards c3">
+        <article class="card">
+          <span class="idx">R1</span>
+          <h3><a href="https://github.com/TysAIs/gb10-ops">GB10 setup standard</a></h3>
+          <p>Setup standard for any GB10 device: clock caps, pinned kernel, headless hardening, fabric clustering for any node count.</p>
+          <a class="more" href="https://github.com/TysAIs/gb10-ops">Open the repo</a>
+        </article>
+        <article class="card">
+          <span class="idx">R2</span>
+          <h3><a href="https://github.com/TysAIs/slm-gauntlet">Gauntlet benchmark</a></h3>
+          <p>A benchmark for small local models: agent capability, structured output, retrieval, coding, and throughput, with deterministic scoring.</p>
+          <a class="more" href="https://github.com/TysAIs/slm-gauntlet">Open the repo</a>
+        </article>
+        <article class="card">
+          <span class="idx">R3</span>
+          <h3><a href="https://github.com/TysAIs/xPST">xPST</a></h3>
+          <p>Free, local cross-posting for short-form video across the platforms dotBANG publishes to.</p>
+          <a class="more" href="https://github.com/TysAIs/xPST">Open the repo</a>
+        </article>
+      </div>
+      <div class="cta">
+        <a class="btn btn-ghost" href="pages/learn.html">All learning resources</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block ascii-band">
+    <div class="wrap">
+      <p class="kicker">The house style</p>
+      <h2 class="section-h">Drawn, not decorated.</h2>
+      <p class="section-sub">The art is generated, not stock: ASCII and dithering on a 4px module, topographic lines on the edges, one accent. The field at the top of this page is live. Move your pointer over it.</p>
+      <figure class="ascii-frame">
+        <img src="assets/art/skyline-wide-chalk.png" alt="ASCII night city skyline drawn in monospace characters" width="1600" height="900" loading="lazy" decoding="async">
+      </figure>
+      <div class="ascii-cap"><span>ASCII system · night city</span><span class="r">JetBrains Mono · 4px module</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="kicker">Downstream</p>
+      <h2 class="section-h">After the audience.</h2>
+      <div class="cards c3">
+        <article class="card">
+          <span class="idx">G</span>
+          <h3><a href="pages/giveaways.html">Giveaways</a></h3>
+          <p>Free hardware for people who run AI locally. Rules, prize, and dates are published in full before anything opens.</p>
+          <a class="more" href="pages/giveaways.html">The standing rules</a>
+        </article>
+        <article class="card">
+          <span class="idx">M</span>
+          <h3><a href="pages/merch.html">Merch + starter kits</a></h3>
+          <p>The mark on cloth, and USB kits that get a local AI setup running in one plug. No fake store: real products when they are real.</p>
+          <a class="more" href="pages/merch.html">What is coming</a>
+        </article>
+        <article class="card">
+          <span class="idx">P</span>
+          <h3><a href="pages/affiliates.html">Affiliate links</a></h3>
+          <p>Gear that is actually in the rack, linked honestly, with the disclosure on the link itself.</p>
+          <a class="more" href="pages/affiliates.html">The rule</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="callout-wrap">
+    <div class="wrap">
+      <div class="callout">
+        <strong>Not a course funnel.</strong>
+        <p>The knowledge is free, the builds are public, and nothing here is gated.</p>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="site">
-  <div class="wrap">dotBANG<span style="color:var(--accent)">.!</span> — local AI, free knowledge first. Domain announcement pending.</div>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <svg class="mark" width="18" height="30" viewBox="0 0 12 20" aria-hidden="true"><rect class="m-dot m-dot-a" x="0" y="16" width="4" height="4"/><rect class="m-stem" x="8" y="0" width="4" height="12"/><rect class="m-dot m-dot-b" x="8" y="16" width="4" height="4"/></svg>
+      <p class="blurb">dotBANG: local AI, built in the open. Content first, consulting for businesses, merch downstream.</p>
+    </div>
+    <div>
+      <p class="foot-h">Site</p>
+      <ul class="foot-links">
+        <li><a href="pages/learn.html">Learn</a></li>
+        <li><a href="pages/giveaways.html">Giveaways</a></li>
+        <li><a href="pages/merch.html">Merch + kits</a></li>
+        <li><a href="pages/affiliates.html">Affiliates</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-h">Follow</p>
+      <ul class="foot-links">
+        <li><a href="https://www.tiktok.com/@dot___bang">TikTok · @dot___bang</a></li>
+        <li><a href="https://www.instagram.com/dot___bang">Instagram · @dot___bang</a></li>
+        <li><a href="https://www.youtube.com/@tysn_dev">YouTube · @tysn_dev</a></li>
+        <li><a href="https://x.com/tysn_dev">X · @tysn_dev</a></li>
+      </ul>
+    </div>
+    <div class="foot-note"><span>© 2026 dotBANG</span><span>Domain announcement pending</span></div>
+  </div>
 </footer>
+
+<script>
+(function () {
+  function boot() {
+    if (window.DBField && typeof window.DBField.attach === 'function') {
+      try { window.DBField.attach(); } catch (e) { document.body.classList.add('no-field'); }
+    } else {
+      document.body.classList.add('no-field');
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else { boot(); }
+})();
+</script>
 </body>
 </html>

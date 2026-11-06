@@ -2,10 +2,17 @@
   "brand": "dotBANG",
   "logo_mark": ".!",
   "domain": null,
-  "domain_status": "TBD — awaiting Tyler's pick. Candidates checked 2026-11-03 via RDAP: dotbang.com taken/parked for sale (HugeDomains since 2014); dotbang.ai, dotbang.labs, dotbang.io not-registered. Do not register, do not publish a canonical URL, do not add a sitemap domain until Tyler picks.",
+  "domain_status": "TBD \u2014 awaiting the owner's pick. Candidates checked 2026-11-03 via RDAP: dotbang.com taken/parked for sale (HugeDomains since 2014); dotbang.ai, dotbang.labs, dotbang.io not-registered. Do not register, do not publish a canonical URL, do not add a sitemap domain until the owner picks.",
   "canonical_url": null,
   "analytics": null,
   "launch_target": "Weekend of Nov 7-8, 2026 (scaffold live before domain; domain swap is a one-line change here)",
-  "concept": "A .io hub for local AI. Free knowledge for credibility; merch and USB one-click starter kits around it. Not a course funnel.",
-  "privacy_rule": "No personal data, real IPs, hostnames, emails, or internal URLs in any public file."
+  "concept": "The public home of dotBANG. Content and free local-AI knowledge first: the audience is the business. AI consulting for businesses (dashboards, a white-label custom CRM, applied AI) is the service arm. Merch, starter kits, giveaways and affiliate links are downstream of the audience. Not a course funnel.",
+  "privacy_rule": "No personal data, real IPs, hostnames, emails, or internal URLs in any public file.",
+  "socials": {
+    "tiktok": "https://www.tiktok.com/@dot___bang",
+    "instagram": "https://www.instagram.com/dot___bang",
+    "youtube": "https://www.youtube.com/@tysn_dev",
+    "x": "https://x.com/tysn_dev"
+  },
+  "site_v1": "2026-11-05: DIR-06 BLACKOUT build (Muse takeover of kanban t_3e5838f8). Dither field engine + ASCII system from the 2026-11-05 brand pack; wordmark = D1-gridlock drawn asset pending the owner pick D1-D6."
 }

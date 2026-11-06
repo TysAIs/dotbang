@@ -1,0 +1,72 @@
+/* dotBANG palette tokens — the four values of the palette system.
+ * Rev 2026-11-05 · spec: PALETTE-SPEC-2026-11-05.md · checker: tools/audit_palette.py
+ *
+ * There is no fifth colour. If a build needs one, the build is wrong.
+ *
+ * RATIO BANDS, measured on the delivered surface (never on the layout intention):
+ *   field  70–80%   never below 70
+ *   ink    10–15%   never above 15
+ *   accent  4–14%   never below 4
+ *   signal  0–1%    never above 1, and only inside a P-rule (P-01 … P-05)
+ * The four buckets must sum to 100%.
+ *
+ * PAIRING RULES, from measured contrast:
+ *   black on accent   8.66:1  legal — the only type colour on an accent plate
+ *   white on accent   2.43:1  banned
+ *   signal on black   5.23:1  legal
+ *   signal on white   4.01:1  banned (fails AA small text)
+ *   signal on accent  1.65:1  banned
+ *   signal below 100% alpha: hairlines and borders only, never a label
+ *
+ * ONE ELEMENT PER SURFACE may use --db-signal. Two is a failure.
+ */
+
+:root{
+  /* values */
+  --db-field:      #000000;
+  --db-ink:        #FFFFFF;
+  --db-accent:     #6CACE4;
+  --db-signal:     #F50087;
+
+  /* derived ink steps — alpha steps belong to their own family, never a new colour */
+  --db-ink-dim:    rgba(255,255,255,.56);
+  --db-rule:       rgba(255,255,255,.18);
+  --db-accent-ink: rgba(0,0,0,.86);   /* type inside an accent plate */
+
+  /* bands, as numbers, so a checker can read the same rule the design does */
+  --db-band-field-min:  70;
+  --db-band-field-max:  80;
+  --db-band-ink-min:    10;
+  --db-band-ink-max:    15;
+  --db-band-accent-min: 4;
+  --db-band-accent-max: 14;
+  --db-band-signal-min: 0;
+  --db-band-signal-max: 1;
+
+  /* measured contrast, quoted so no one re-derives it wrong */
+  --db-cr-ink-on-field:    21.00;
+  --db-cr-accent-on-field: 8.66;
+  --db-cr-signal-on-field: 5.23;
+  --db-cr-signal-on-ink:   4.01;
+  --db-cr-signal-on-accent: 1.65;
+}
+
+/* Reference implementations of the only two legal fills. */
+.db-plate-accent{
+  background: var(--db-accent);
+  color: #000;                        /* 8.66:1 — white type here is a defect */
+}
+
+.db-plate-ink{
+  background: var(--db-ink);
+  color: #000;
+}
+
+/* P-01 form, drawn: the only pink shape in the system, 9×9 on the field. */
+.db-signal-square{
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--db-signal);        /* never inside a .db-plate-accent or .db-plate-ink */
+  vertical-align: 0;
+}
