@@ -9,7 +9,9 @@ for p in ["/", "/pages/learn.html", "/pages/affiliates.html", "/pages/giveaways.
         if p == "/":
             assert "<title>dotBANG" in body
         if "learn" in p:
-            assert body.count("github.com/TysAIs") == 3, body.count("github.com/TysAIs")
+            import re as _re
+            repos = _re.findall(r"github\.com/TysAIs/[A-Za-z0-9_.-]+", body)
+            assert len(repos) == 3, repos
             print("  learn links ok (3 real repos)")
         if "affiliates" in p:
             assert "Link list pending" in body and "amazon" not in body.lower()
