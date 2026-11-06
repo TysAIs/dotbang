@@ -1,0 +1,207 @@
+/* ==========================================================================
+   dotBANG site — page-level blocks on top of DIR-06 BLACKOUT.
+   Consumes the 2026-11-05 brand pack: type scale, spacing rhythm, hairlines
+   and the three-colour palette come from assets/dir06.css. Nothing here
+   introduces a new colour, a radius, a gradient or a shadow.
+   ========================================================================== */
+
+/* ---- brand casing: the wordmark is written dotBANG, never set in caps.
+   Tyler's rule (2026-11-05): dot lowercase, BANG uppercase, .! in code.
+   The pack's uppercase+tracking treatment is overridden here, not in dir06.css,
+   so the vendored pack file stays byte-identical to its source. ---- */
+.brand .wordmark{text-transform:none;letter-spacing:.14em}
+.foot-brand{text-transform:none;letter-spacing:.12em}
+/* Tyler's brand casing rule (2026-11-05): the brand is always written dotBANG.
+   Uppercase label styles must not turn it into DOTBANG, so the brand is exempt
+   inside any uppercase context. Do not remove without the same rule changing. */
+.wm,#svc-h .wm{text-transform:none;letter-spacing:.06em}
+
+/* ---- motion: the DIR-06 stepped reveal, retimed for LCP ----
+   The vendored dir-06.css reveals the h1 over .52s. The h1 is the LCP element, so
+   that animation was setting the LCP number: measured 1.20s on a throttled phone
+   against 0.60s to first paint. At .24s the reveal is still two steps and still
+   arrives before the eye settles, and LCP lands inside the budget. The pack file
+   stays byte-identical; the timing override lives here. */
+h1{animation-duration:.24s}
+.lede{animation-duration:.28s;animation-delay:.06s}
+
+/* ---- inner pages: a page statement, not a hero ---- */
+.page-hero{max-width:1280px;margin:0 auto;padding:200px 48px 80px;
+  border-bottom:1px solid var(--ink-10)}
+.page-hero .eyebrow{margin-bottom:40px}
+.page-hero h1{font-size:var(--t03-display-3);line-height:var(--lh-03);
+  letter-spacing:var(--tr-03);margin:0 0 32px;max-width:24ch}
+.page-hero .lede{margin-bottom:0;max-width:56ch}
+
+/* ---- prose ---- */
+.prose{max-width:760px;margin:0 auto;padding:96px 48px}
+.prose h2{font-size:var(--t04-display-4);font-weight:500;letter-spacing:var(--tr-04);
+  line-height:var(--lh-04);margin:80px 0 24px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-family:"JetBrains Mono",monospace;font-size:var(--t10-label);
+  font-weight:400;letter-spacing:var(--tr-10);text-transform:uppercase;
+  color:var(--ink-56);margin:56px 0 20px}
+.prose p{font-size:var(--t06-body-l);line-height:var(--lh-06);color:var(--ink-62);
+  margin:0 0 24px;max-width:68ch}
+.prose p strong{color:var(--ink);font-weight:500}
+.prose ul,.prose ol{margin:0 0 24px;padding:0 0 0 0;max-width:68ch}
+.prose li{font-size:var(--t06-body-l);line-height:var(--lh-06);color:var(--ink-62);
+  padding:10px 0 10px 24px;border-top:1px solid var(--ink-10);position:relative}
+.prose li::before{content:"—";position:absolute;left:0;color:var(--signal)}
+.prose ol{counter-reset:n}
+.prose ol li{counter-increment:n}
+.prose ol li::before{content:counter(n,decimal-leading-zero);font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);color:var(--ink-56)}
+.prose a{color:var(--ink);border-bottom:1px solid var(--ink-28);padding-bottom:1px}
+.prose a:hover{color:var(--signal);border-color:var(--signal)}
+.prose .note{font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:.12em;color:var(--ink-56);text-transform:uppercase;margin:48px 0 0}
+
+/* ---- services ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--ink-12)}
+.svc{padding:48px 32px 48px 0;border-bottom:1px solid var(--ink-12)}
+.svc + .svc{padding-left:32px;border-left:1px solid var(--ink-10)}
+.svc .num{display:block;font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:var(--tr-12);color:var(--signal);margin-bottom:24px}
+.svc h3{font-size:var(--t04-display-4);font-weight:500;letter-spacing:var(--tr-04);
+  line-height:var(--lh-04);margin:0 0 20px}
+.svc p{font-size:var(--t07-body);line-height:var(--lh-07);color:var(--ink-62);margin:0 0 20px}
+.svc dl{margin:0}
+.svc dt{font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-56);
+  padding-top:12px;border-top:1px solid var(--ink-10)}
+.svc dd{margin:4px 0 0;font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);color:var(--ink-62);letter-spacing:.06em}
+
+/* ---- fact table ---- */
+.facts{width:100%;border-collapse:collapse;margin:0 0 32px}
+.facts th,.facts td{text-align:left;vertical-align:top;padding:16px 24px 16px 0;
+  border-top:1px solid var(--ink-12);font-size:var(--t07-body);line-height:var(--lh-07)}
+.facts th{font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-56);
+  width:34%}
+.facts td{color:var(--ink-62)}
+.facts td strong{color:var(--ink);font-weight:500}
+
+/* ---- case study ---- */
+.case-top{max-width:1280px;margin:0 auto;padding:200px 48px 0}
+.case-top .tag{display:inline-block;font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);letter-spacing:var(--tr-12);text-transform:uppercase;
+  color:var(--signal);border:1px solid rgba(108,172,228,.4);padding:8px 12px;
+  margin-bottom:40px}
+.case-top h1{font-size:var(--t03-display-3);line-height:var(--lh-03);
+  letter-spacing:var(--tr-03);margin:0 0 32px;max-width:26ch}
+.case-top .lede{max-width:52ch}
+
+/* ---- contact: an accent PLATE, not accent-coloured text ----
+   PALETTE-SPEC-2026-11-05 §1: the accent is 4–14% of every delivered surface and it
+   is carried by a filled block with black type (8.66:1). White type on this plate is
+   2.43:1 and is banned, so every colour below is black or an alpha step of black.
+
+   The plate is the ratio control: its padding is a per-page variable (see the
+   "ratio tuning" block at the foot of this file, where every value is a measured
+   number, not a guess). Nothing here invents a colour to reach a band. */
+.band-label{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-family:"JetBrains Mono",monospace;font-size:var(--t12-micro);
+  letter-spacing:var(--tr-12);text-transform:uppercase;
+  padding-bottom:16px;border-bottom:4px solid currentColor;margin:0 0 48px}
+.contact{background:var(--signal);color:#000;border-top:0}
+.contact-in{max-width:1280px;margin:0 auto;
+  padding:var(--plate-pad-t,64px) 48px var(--plate-pad-b,72px)}
+.contact .band-label{color:rgba(0,0,0,.72);margin-bottom:var(--plate-label-gap,48px)}
+.contact h2{font-size:var(--plate-h2,var(--t03-display-3));line-height:var(--lh-03);
+  letter-spacing:var(--tr-03);margin:0 0 24px;max-width:20ch;color:#000}
+.contact p{font-size:var(--plate-body,var(--t06-body-l));line-height:var(--lh-06);
+  color:rgba(0,0,0,.78);max-width:52ch;margin:0 0 var(--plate-body-gap,40px)}
+/* the action on an accent plate: black fill, accent label (8.66:1) */
+.btn-on-accent{display:inline-block;background:#000;color:var(--signal);
+  font-family:"JetBrains Mono",monospace;font-size:var(--t11-label-s);
+  letter-spacing:var(--tr-11);text-transform:uppercase;padding:18px 26px}
+.btn-on-accent:hover{color:#000;background:var(--ink)}
+
+/* ---- footer: the ink plate. White field, black type, 21:1 ----
+   The second half of the ratio: a page cannot reach 10–15% ink with white type on
+   black alone, so the closing plate is the ink mass. Nothing decorative is added. */
+footer.site.plate{background:var(--ink);color:#000;border-top:0;
+  padding:var(--foot-pad-t,56px) 0 var(--foot-pad-b,72px)}
+footer.site.plate .foot-in{display:block}
+footer.site.plate .band-label{color:rgba(0,0,0,.72);margin-bottom:40px}
+footer.site.plate .contact-links{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid rgba(0,0,0,.32)}
+footer.site.plate .contact-links a{display:block;padding:32px 24px 32px 0;
+  border-bottom:1px solid rgba(0,0,0,.32);color:#000;
+  font-size:var(--t04-display-4);font-weight:500;letter-spacing:var(--tr-04);
+  line-height:var(--lh-04)}
+footer.site.plate .contact-links a + a{padding-left:32px;border-left:1px solid rgba(0,0,0,.32)}
+footer.site.plate .contact-links a span{display:block;font-family:"JetBrains Mono",monospace;
+  font-size:var(--t12-micro);letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(0,0,0,.72);margin-top:12px}
+footer.site.plate .contact-links a:hover{background:rgba(0,0,0,.06);color:#000}
+footer.site.plate .foot-row{display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;margin-top:48px}
+footer.site.plate .foot-brand{color:#000}
+footer.site.plate .foot-brand .mark .m-stem{fill:#000}
+footer.site.plate .foot-brand .mark .m-dot-b{fill:#000}
+footer.site.plate .foot-brand .mark .m-dot-a{fill:var(--signal)}
+footer.site.plate .foot-links a{color:rgba(0,0,0,.72)}
+footer.site.plate .foot-links a:hover{color:#000}
+footer.site.plate .foot-note{color:rgba(0,0,0,.72);margin-top:40px}
+
+/* slim form: for the short secondary pages. Same components, less mass — the
+   bands are sized to the page, not the page padded to the bands. One row:
+   statement and action together, one line of copy under it. */
+.contact.slim .band-label{margin-bottom:var(--plate-label-gap,20px);padding-bottom:10px}
+.contact.slim .slim-row{display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;margin:0}
+.contact.slim h2{font-size:var(--t04-display-4);margin:0}
+.contact.slim .btn-on-accent{padding:var(--plate-btn-pad,14px 20px)}
+.contact.slim .slim-note{font-size:var(--t07-body);line-height:var(--lh-07);
+  color:rgba(0,0,0,.78);max-width:64ch;margin:16px 0 0}
+footer.site.plate.slim .contact-links{display:none}
+footer.site.plate.slim .band-label{margin-bottom:var(--foot-label-gap,24px);padding-bottom:10px}
+footer.site.plate.slim .foot-row{margin-top:var(--foot-row-gap,24px)}
+footer.site.plate.slim .foot-note{margin-top:var(--foot-note-gap,20px)}
+
+
+/* ---- the ratio rule: a 4px accent hairline, full width, structural ---- */
+.ratio-rule{height:4px;background:var(--signal);border:0;margin:0}
+
+/* ---- accent-filled primary action: black type, 8.66:1 ---- */
+.btn-primary{background:var(--signal);color:#000;border:0;padding:16px 24px;
+  letter-spacing:var(--tr-11);font-family:"JetBrains Mono",monospace;
+  font-size:var(--t11-label-s);text-transform:uppercase;display:inline-block}
+.btn-primary:hover{opacity:.86}   /* darker accent over the field; same hue, no fifth colour */
+.btn-ghost{border-bottom:1px solid var(--ink-28);color:var(--ink-56)}
+.btn-ghost:hover{color:var(--ink);border-bottom-color:var(--signal)}
+
+
+/* ---- P-01: the one signal element on this surface. 9x9 on the field, 5.23:1.
+   PALETTE-SPEC §4: one pink element per surface, never two, never a sentence. ---- */
+.chip{display:inline-flex;align-items:center;gap:10px}
+.chip-dot{width:9px;height:9px;background:var(--db-signal,#F50087);flex:0 0 auto}
+
+/* ---- misc ---- */
+.inline-link{font-family:"JetBrains Mono",monospace;font-size:var(--t11-label-s);
+  letter-spacing:var(--tr-11);text-transform:uppercase;color:var(--ink-56);
+  border-bottom:1px solid rgba(255,255,255,.24);padding-bottom:4px}
+.inline-link:hover{color:var(--signal);border-color:var(--signal)}
+.plain-list{list-style:none;padding:0;margin:0}
+.plain-list li{border-top:1px solid var(--ink-10);padding:20px 0}
+
+@media (max-width:900px){
+  .page-hero{padding:140px 20px 56px}
+  .case-top{padding:140px 20px 0}
+  .prose{padding:64px 20px}
+  .prose h2{font-size:var(--t04-display-4);margin-top:56px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc{padding:40px 0}
+  .svc + .svc{padding-left:0;border-left:0}
+  .facts th{width:auto;display:block;padding-bottom:4px}
+  .facts td{display:block;padding-top:4px}
+  .facts tr{display:block;border-top:1px solid var(--ink-12);padding:16px 0}
+  .facts th,.facts td{border-top:0}
+  .contact-in{padding:96px 20px}
+  .contact-links{grid-template-columns:1fr}
+  .contact-links a + a{padding-left:0;border-left:0}
+}

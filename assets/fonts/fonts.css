@@ -1,0 +1,26 @@
+/* dotBANG — webfonts (subset of the 2026-11-05 brand pack faces, OFL-1.1).
+   Inter: body + display. JetBrains Mono: labels, data, code. No third face.
+
+   One file per family. The pack shipped one byte-identical file under each weight
+   name (sha256 of inter-400/500/600/700-latin.woff2 is identical; the two mono
+   files are identical too), so every weight points at the same src and the browser
+   makes one request per family instead of six. The weight declarations stay
+   distinct: the face is used at the weight it is asked for, and no synthetic bold
+   is invented on top of it.
+
+   Bytes matter here: these two files are the only render-blocking resource on the
+   site and they bound LCP. Subset to Latin-1 + general punctuation + arrows with
+   fontTools (U+0020-007E, U+00A0-00FF, U+2000-206F, U+2190-21FF, U+2212), which
+   covers every character this site can type, including — · … → and the quotes.
+   Regenerate:
+     uv run --with fonttools --with brotli -- python -m fontTools.subset \
+       <source>.woff2 --unicodes="U+0020-007E,U+00A0-00FF,U+2000-206F,U+2190-21FF,U+2212" \
+       --flavor=woff2 --output-file=<name>.woff2
+   If new copy needs a glyph outside those ranges, widen the ranges and regenerate;
+   the browser would otherwise fall back to the system face for that character. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(inter-latin-subset.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(inter-latin-subset.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(inter-latin-subset.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(inter-latin-subset.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url(jetbrains-mono-latin-subset.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:700;font-display:swap;src:url(jetbrains-mono-latin-subset.woff2) format("woff2")}
