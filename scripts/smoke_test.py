@@ -12,18 +12,17 @@ import http.server, os, threading, urllib.request, urllib.parse, functools, path
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PORT = int(os.environ.get("PORT", "8765"))
 PAGES = {
-    "/": ["Your data,", "AVAILABLE FOR WORK", "Territory and sales briefs", "ig.me/m/dot___bang"],
+    "/": ["Your data,", "Available for work", "Territory and sales briefs", "ig.me/m/dot___bang",
+          "accent plate #6CACE4"],
     "/pages/services.html": ["Three ways to work", "The data proof", "Model operations"],
     "/pages/work.html": ["The Territory Brief", "11,232 rows", "20 checks, 0 failures",
                          "hackney-territory-brief-preview"],
     "/pages/learn.html": ["GB10 setup standard", "Gauntlet benchmark", "xPST"],
     "/pages/merch.html": ["No store yet", "follow the audience"],
     "/pages/giveaways.html": ["Published up front", "No data hoarding"],
-    "/pages/affiliates.html": ["Link list pending", "The rule"],
+    "/pages/affiliates.html": ["Link list pending", "The rule", "How a link gets on this page"],
 }
-ASSETS = ["/assets/base.css", "/assets/dir06.css", "/assets/site.css",
-          "/assets/fonts/fonts.css", "/assets/fonts/inter-400-latin.woff2",
-          "/assets/fonts/jetbrains-mono-400-latin.woff2",
+ASSETS = ["/assets/fonts/inter-latin-subset.woff2", "/assets/fonts/jetbrains-mono-latin-subset.woff2",
           "/assets/favicon.svg", "/robots.txt"]
 
 handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT))

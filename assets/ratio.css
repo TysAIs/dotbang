@@ -1,0 +1,47 @@
+
+/* ==========================================================================
+   RATIO TUNING — per-page band mass.
+
+   Every value below exists to put the delivered page inside the bands of
+   PALETTE-SPEC-2026-11-05 (field 70–80, ink 10–15, accent 4–14, signal ≤1).
+   They are measured, not designed: `python3 build/tools/measure.py` renders the
+   page and runs the pack's audit_palette.py --check over the full-page pixels.
+   Changing copy changes the page height, which changes these numbers — re-run
+   the checker after any edit and adjust here if a page leaves its band.
+
+   The bands are the control. No colour is added to reach a ratio: the accent
+   plate and the ink plate get taller or shorter.
+   ========================================================================== */
+
+/* the long sales pages keep the full plate; work is trimmed so its accent mass
+   does not cross the 14% ceiling */
+body[data-page="work"]{--plate-pad-t:52px;--plate-pad-b:60px}
+
+/* secondary pages carry the slim form; these are their measured paddings */
+body[data-page="learn"]{--plate-pad-t:28px;--plate-pad-b:30px;--plate-label-gap:20px;
+  --foot-pad-t:40px;--foot-pad-b:44px}
+body[data-page="merch"]{--plate-pad-t:28px;--plate-pad-b:30px;--plate-label-gap:20px;
+  --foot-pad-t:24px;--foot-pad-b:28px}
+body[data-page="giveaways"]{--plate-pad-t:32px;--plate-pad-b:34px;--plate-label-gap:20px;
+  --foot-pad-t:44px;--foot-pad-b:48px}
+body[data-page="affiliates"]{--plate-pad-t:16px;--plate-pad-b:18px;--plate-label-gap:16px;
+  --foot-pad-t:24px;--foot-pad-b:28px}
+
+/* ---- phone: the same components, less mass. A stacked ink plate at 390 is
+   much taller than at 1440, so the closing plates are tightened rather than
+   letting ink run over its 15% ceiling. The footer's meta label is dropped on
+   the phone: it is a spec caption, and the 60px it costs is a whole band step. */
+@media (max-width:900px){
+  .contact-in{padding:var(--plate-pad-t-m,var(--plate-pad-t,40px)) 20px var(--plate-pad-b-m,var(--plate-pad-b,44px))}
+  footer.site.plate{padding:var(--foot-pad-t-m,20px) 0 var(--foot-pad-b-m,24px)}
+  footer.site.plate .band-label{display:none}
+  footer.site.plate .foot-row{margin-top:24px}
+  footer.site.plate .foot-links{gap:12px 20px}
+  footer.site.plate .contact-links a{padding:24px 0;font-size:var(--t05-lead)}
+  footer.site.plate .contact-links a + a{border-left:0}
+  body[data-page="work"]{--foot-pad-t-m:20px;--foot-pad-b-m:24px}
+  body[data-page="learn"]{--foot-pad-t-m:20px;--foot-pad-b-m:24px}
+  body[data-page="merch"]{--foot-pad-t-m:14px;--foot-pad-b-m:18px;--plate-pad-t-m:20px;--plate-pad-b-m:22px}
+  body[data-page="giveaways"]{--foot-pad-t-m:18px;--foot-pad-b-m:22px}
+  body[data-page="affiliates"]{--foot-pad-t-m:10px;--foot-pad-b-m:14px}
+}

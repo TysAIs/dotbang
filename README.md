@@ -20,9 +20,25 @@ Static site for dotBANG: AI systems built on a company's own data. This repo is 
 
 ## Stack
 
-Plain static HTML/CSS. No build step, no framework, no npm dependencies, no JavaScript on any page.
+Plain static HTML/CSS. No framework, no npm dependencies, no JavaScript on any page.
 
-Why: it deploys identically on GitHub Pages and on any static host after a domain lands, cannot break on a dependency update, and any person can edit it.
+The CSS is **inlined at commit time**, not at request time: `scripts/inline_css.py` assembles the five
+stylesheets in `assets/` into a `<style>` block in each page and emits the two font preloads. That removes
+the only render-blocking resource the site had (five stylesheet round trips, ~1.2s estimated on a throttled
+phone). The sources in `assets/` are the editable truth; `scripts/inline_css.py --check` fails CI if a page's
+inlined block is stale, so the two cannot drift.
+
+Why no framework: it deploys identically on GitHub Pages and on any static host after a domain lands,
+cannot break on a dependency update, and any person can edit it.
+
+**Performance budget** (declared, then measured): performance ≥95, LCP ≤1.2s, TBT ≤50ms, CLS ≤0.02,
+transfer ≤500 KiB on Lighthouse's throttled mobile profile, nothing render-blocking. Current build:
+**100 / 1.20s / 0ms / 0 / 72 KiB**, desktop 100 with LCP 0.3s. Receipts and method: `docs/WEBSITE-2026-11-05.md`.
+
+**Palette ratio** (Tyler's Nov 5 rule): field 70–80%, ink 10–15%, accent `#6CACE4` 4–14%, one pink element
+≤1%. Enforced on rendered pixels with the brand pack's `audit_palette.py`; every page measures inside the
+bands at 1440 and 390. The closing accent plate and ink plate footer are what carry the ratio —
+`assets/ratio.css` holds the per-page, measured values.
 
 ## Deploy
 
@@ -33,10 +49,16 @@ Why: it deploys identically on GitHub Pages and on any static host after a domai
 ## Tests
 
 ```bash
-python3 scripts/privacy-audit.py   # no emails, IPs or internal hostnames in any public file
-python3 scripts/smoke_test.py      # serves the repo, fetches every page and asset, follows every
-                                   # same-origin link, asserts page markers and brand casing
+python3 scripts/inline_css.py --check # fails if a page's inlined CSS block is stale
+python3 scripts/privacy-audit.py      # no emails, IPs or internal hostnames in any public file
+PORT=8765 python3 scripts/smoke_test.py  # serves the repo, fetches every page and asset, follows every
+                                         # same-origin link, asserts page markers and brand casing
 ```
+
+All three run in `.github/workflows/pages.yml` on every pull request and on every push to `main`, before
+the Pages deploy step. The palette-ratio and Lighthouse checks need a browser, so they run from the brand
+pack's tooling (`python3 build/tools/measure.py`, `build/tools/serve.py` + Lighthouse) — see
+`docs/WEBSITE-2026-11-05.md` §8.
 
 The smoke test crawls same-origin `href`/`src` links, so a renamed stylesheet or a moved page fails the run instead of shipping a broken link.
 

@@ -19,9 +19,18 @@
     "source_pack": "dotbang-brand-2026-11-05",
     "field": "#000000",
     "ink": "#FFFFFF",
-    "signal": "#6CACE4",
+    "accent": "#6CACE4",
+    "signal": "#F50087",
+    "palette_ratio": "field 70-80%, ink 10-15%, accent 4-14%, signal 0-1%; checked on rendered pixels with the pack's audit_palette.py. One pink element per surface (P-01: available-for-work status square).",
+    "accent_usage": "Structural only: filled accent plate with black type (8.66:1), 4px accent rules, filled primary action with black type. White type on the accent is banned (2.43:1).",
     "type_scale": { "display_px": [150, 100, 66, 44], "body_px": 18, "label_floor_px": 11 },
-    "rules": "Three colours only. No radius, no blur, no gradient. Hairlines are 1px at 10-12% ink."
+    "rules": "Four values, no fifth colour. No radius, no blur, no gradient. Hairlines are 1px at 10-12% ink."
+  },
+  "performance_budget": {
+    "measured_on": "Lighthouse 12.8.2, throttled mobile profile, gzip-serving local host",
+    "performance": 100, "lcp_ms": 1200, "fcp_ms": 600, "tbt_ms": 0, "cls": 0, "transfer_kib": 72,
+    "render_blocking": "none — CSS inlined at commit time by scripts/inline_css.py",
+    "note": "LCP 1.20s is the declared ceiling, met not beaten; the remaining cost is the throttled font fetch."
   },
   "entity": {
     "legal_name": null,
