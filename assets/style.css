@@ -68,8 +68,10 @@ img{display:block;max-width:100%}
 .brand .wordmark-img{height:30px;width:auto;image-rendering:pixelated}
 .brand .wordmark{font-family:var(--font-mono);font-size:17px;font-weight:700;
   letter-spacing:.04em;color:var(--ink)}
-.nav{display:flex;gap:26px;margin-left:auto}
-.nav a{font-family:var(--font-mono);font-size:var(--t11-label-s);
+.nav{display:flex;gap:26px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-family:var(--font-mono);font-size:var(--t11-label-s);white-space:nowrap;
+  flex:0 0 auto;
   letter-spacing:var(--tr-11);text-transform:uppercase;color:var(--ink-62);
   text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--signal)}
@@ -236,7 +238,7 @@ code{font-family:var(--font-mono);font-size:.92em;color:var(--signal)}
 .foot-links a:hover{color:var(--signal)}
 .foot-note{grid-column:1/-1;border-top:1px solid var(--ink-10);
   padding-top:20px;font-family:var(--font-mono);font-size:var(--t12-micro);
-  letter-spacing:var(--tr-12);text-transform:uppercase;color:var(--ink-56);
+  letter-spacing:.18em;color:var(--ink-56);
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* ---------- responsive ---------------------------------------------------- */
