@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -15,15 +16,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inline CSS is current
+        run: python3 scripts/inline_css.py --check
+      - name: Privacy audit
+        run: python3 scripts/privacy-audit.py
+      - name: Smoke test (every page, every link, brand casing)
+        run: PORT=8765 python3 scripts/smoke_test.py
+
   deploy:
+    needs: check
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Privacy audit
-        run: python3 scripts/privacy-audit.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
