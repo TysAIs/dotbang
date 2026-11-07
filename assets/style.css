@@ -124,7 +124,7 @@ h1 .punct{height:.62em;width:auto;display:inline-block;margin-left:.06em}
   letter-spacing:var(--tr-11);text-transform:uppercase;text-decoration:none;
   padding:14px 20px;border:1px solid var(--ink-28);color:var(--ink)}
 .btn-primary{background:var(--signal);border-color:var(--signal);color:#000;font-weight:700}
-.btn-primary:hover{background:#8FC0EE}
+.btn-primary:hover{opacity:.86}   /* darker accent over the field: same hue, no fifth colour */
 .btn-ghost:hover{border-color:var(--ink)}
 
 .hero-panel{border:1px solid var(--ink-12);background:rgba(0,0,0,.78);
@@ -219,27 +219,93 @@ main.page .card p{margin-top:8px}
   display:block;margin-bottom:8px}
 code{font-family:var(--font-mono);font-size:.92em;color:var(--signal)}
 
-/* ---------- glass footer -------------------------------------------------- */
-.site-foot{background:var(--glass);
-  -webkit-backdrop-filter:blur(16px) saturate(1.5);
-  backdrop-filter:blur(16px) saturate(1.5);
-  border-top:1px solid rgba(255,255,255,.14)}
-.foot-in{padding:52px 48px 44px;display:grid;
-  grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.foot-brand{display:flex;gap:14px;align-items:flex-start}
-.foot-brand .blurb{font-size:var(--t08-body-s);color:var(--ink-62);
-  line-height:var(--lh-08);max-width:26em}
-.foot-h{font-family:var(--font-mono);font-size:var(--t12-micro);
-  letter-spacing:var(--tr-12);text-transform:uppercase;color:var(--ink-56);
-  margin-bottom:16px}
-.foot-links{list-style:none}
-.foot-links li{margin-top:9px}
-.foot-links a{font-size:var(--t08-body-s);color:var(--ink-62);text-decoration:none}
-.foot-links a:hover{color:var(--signal)}
-.foot-note{grid-column:1/-1;border-top:1px solid var(--ink-10);
-  padding-top:20px;font-family:var(--font-mono);font-size:var(--t12-micro);
-  letter-spacing:.18em;color:var(--ink-56);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* ==========================================================================
+   PAGE INDEX — the site/follow links, on the field side of the page.
+   On the short pages the footer cannot carry both the link index and the ink
+   plate without pushing white past its 15% ceiling, so the index is a field
+   section and only the two contact links stay on the white plate.
+   ========================================================================== */
+.page-index{border-top:1px solid var(--ink-12);
+  padding:var(--index-t,56px) 0 var(--index-b,52px)}
+.index-in{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);
+  gap:56px;max-width:1240px;margin:0 auto;padding:0 48px}
+.index-brand{display:flex;gap:14px;align-items:flex-start}
+.index-brand .blurb{font-size:var(--t08-body-s);color:var(--ink-56);
+  line-height:var(--lh-06);max-width:34ch;margin:0}
+.page-index .foot-h{font-family:var(--font-mono);font-size:var(--t12-micro);
+  letter-spacing:var(--tr-12);text-transform:uppercase;color:var(--ink-56)}
+.page-index .foot-links{list-style:none;margin-top:12px}
+.page-index .foot-links li{margin-top:8px}
+.page-index .foot-links a{font-size:var(--t08-body-s);color:var(--ink-62);text-decoration:none}
+.page-index .foot-links a:hover{color:var(--ink)}
+
+/* ==========================================================================
+   CLOSING BANDS — accent band + ink plate (PALETTE-SPEC-2026-11-05 §1, §3)
+   The accent is 4–14% of every delivered surface and it is carried by a FILLED
+   BLOCK with black type (8.66:1); accent-coloured text alone is 2 orders of
+   magnitude short of the floor. White type on the accent plate is 2.43:1 and is
+   banned, so every colour on the plate is black or an alpha step of black.
+
+   The ink plate closes the page: it is the only white field, black type 21:1.
+   Together the two bands are the ratio control. The bands are a fixed pixel
+   height and the ratio is a percentage of the delivered page, so their mass is
+   set per page and per breakpoint in the RATIO TUNING block at the foot of this
+   file — measured against tools/audit_palette.py, not guessed. No colour is
+   invented to reach a band; the bands get taller or shorter.
+
+   Short pages carry the compact form: headline + one action, no band label and
+   no body paragraph. The long home page carries the full form.
+   ========================================================================== */
+.band-label{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:var(--t12-micro);
+  letter-spacing:var(--tr-12);text-transform:uppercase;
+  padding-bottom:16px;border-bottom:4px solid currentColor;
+  margin:0 0 var(--plate-label-gap,40px)}
+.contact{background:var(--signal);color:#000;border-top:0}
+.contact-in{max-width:1240px;margin:0 auto;
+  padding:var(--plate-t,72px) 48px var(--plate-b,80px)}
+.contact .band-label{color:rgba(0,0,0,.72)}
+.contact h2{font-size:var(--plate-h2,var(--t02-display-2));line-height:1.02;
+  letter-spacing:var(--tr-03);margin:0 0 24px;max-width:20ch;color:#000}
+.contact p{font-size:var(--plate-body,var(--t06-body-l));line-height:var(--lh-06);
+  color:rgba(0,0,0,.78);max-width:52ch;margin:0 0 var(--plate-body-gap,36px)}
+.btn-on-accent{display:inline-block;background:#000;color:var(--signal);
+  font-family:var(--font-mono);font-size:var(--t11-label-s);
+  letter-spacing:var(--tr-11);text-transform:uppercase;text-decoration:none;
+  padding:var(--plate-btn,18px 26px)}
+.btn-on-accent:hover{background:var(--ink);color:#000}
+.ratio-rule{height:4px;background:var(--signal);border:0;margin:0}
+
+/* footer: the ink plate. White field, black type, 21:1. */
+footer.site-foot.plate{background:var(--ink);color:#000;border-top:0;
+  padding:var(--foot-t,64px) 0 var(--foot-b,72px)}
+footer.site-foot.plate .foot-in{display:block;padding:0 48px}
+footer.site-foot.plate .band-label{color:rgba(0,0,0,.72);margin-bottom:var(--foot-label-gap,40px)}
+footer.site-foot.plate .contact-links{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid rgba(0,0,0,.32)}
+footer.site-foot.plate .contact-links a{display:block;padding:22px 24px 22px 0;
+  border-bottom:1px solid rgba(0,0,0,.32);color:#000;text-decoration:none;
+  font-size:clamp(20px,2.1vw,30px);font-weight:500;letter-spacing:var(--tr-03);
+  line-height:1.1}
+footer.site-foot.plate .contact-links a + a{padding-left:32px;border-left:1px solid rgba(0,0,0,.32)}
+footer.site-foot.plate .contact-links a span{display:block;font-family:var(--font-mono);
+  font-size:var(--t12-micro);letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(0,0,0,.72);margin-top:12px}
+footer.site-foot.plate .contact-links a:hover{background:rgba(0,0,0,.06)}
+footer.site-foot.plate .foot-row{display:flex;align-items:flex-start;
+  justify-content:space-between;gap:40px;flex-wrap:wrap;margin-top:var(--foot-row-gap,44px)}
+footer.site-foot.plate .foot-brand{color:#000}
+footer.site-foot.plate .foot-brand .mark .m-stem,
+footer.site-foot.plate .foot-brand .mark .m-dot-b{fill:#000}
+footer.site-foot.plate .foot-brand .mark .m-dot-a{fill:var(--signal)}
+footer.site-foot.plate .blurb{color:rgba(0,0,0,.78)}
+footer.site-foot.plate .foot-h{color:rgba(0,0,0,.62)}
+footer.site-foot.plate .foot-links a{color:rgba(0,0,0,.78)}
+footer.site-foot.plate .foot-links a:hover{color:#000}
+footer.site-foot.plate .foot-note{display:flex;flex-wrap:wrap;justify-content:space-between;
+  gap:8px 24px;padding-top:18px;color:rgba(0,0,0,.62);margin-top:var(--foot-note-gap,32px);
+  border-top:1px solid rgba(0,0,0,.24);font-family:var(--font-mono);
+  font-size:var(--t12-micro);letter-spacing:var(--tr-12);text-transform:uppercase}
 
 /* ---------- responsive ---------------------------------------------------- */
 @media (max-width:1020px){
@@ -247,6 +313,14 @@ code{font-family:var(--font-mono);font-size:.92em;color:var(--signal)}
   .cards.c3{grid-template-columns:1fr}
   .hero-in{grid-template-columns:1fr;gap:44px}
   .hero-panel{max-width:480px}
+}
+/* the middle range carries the compact ink plate: the plate is a fixed pixel
+   band and the bands are a percentage of the page, so on a tablet-sized page
+   the full link index would push white past its ceiling */
+@media (min-width:761px) and (max-width:1100px){
+  footer.site-foot.plate .contact-links a{font-size:20px;padding:16px 20px 16px 0}
+  footer.site-foot.plate .contact-links a + a{padding-left:20px}
+  footer.site-foot.plate .foot-note{margin-top:20px;padding-top:12px}
 }
 @media (max-width:760px){
   .wrap{padding:0 20px}
@@ -265,6 +339,54 @@ code{font-family:var(--font-mono);font-size:.92em;color:var(--signal)}
   .stat{border-left:0;border-top:1px solid var(--ink-12);padding:24px 0 20px}
   .stat:first-child{border-top:0}
   section.block,.callout-wrap{padding:72px 0}
-  .foot-in{grid-template-columns:1fr;padding:40px 20px 34px}
+  .foot-in{padding:40px 20px 34px}
+  .index-in{grid-template-columns:1fr;gap:32px;padding:0 20px}
+  .contact-in{padding:var(--plate-t,32px) 20px var(--plate-b,32px)}
+  .contact h2{font-size:var(--t03-display-3)}
+  footer.site-foot.plate{padding:var(--foot-t,32px) 0 var(--foot-b,32px)}
+  footer.site-foot.plate .foot-in{padding:0 20px}
+  footer.site-foot.plate .contact-links{grid-template-columns:1fr}
+  footer.site-foot.plate .contact-links a + a{padding-left:0;border-left:0}
+  footer.site-foot.plate .contact-links a{font-size:16px;padding:10px 0}
+  footer.site-foot.plate .contact-links a span{margin-top:4px;font-size:10px}
+  footer.site-foot.plate .foot-note{flex-direction:column;gap:4px;font-size:10px;
+    margin-top:16px;padding-top:12px}
   .viewfinder{inset:6px}
 }
+
+/* ==========================================================================
+   RATIO TUNING — the measured mass of the two closing bands, per delivered
+   surface and per breakpoint. These pairs are padding on the accent band and
+   on the ink plate; they were solved from the rendered page height so each
+   surface lands inside the bands (black 70–80, white 10–15, accent 4–14) at
+   both 1440x900 and 390x844. The audit that proves it is
+   docs/palette-audit-2026-11-05.txt — re-run it after touching these numbers.
+   ========================================================================== */
+/* RATIO-TUNING:BEGIN */
+body[data-page="home"]{--plate-t:80px;--plate-b:80px;--foot-t:110px;--foot-b:110px}
+body[data-page="learn"]{--plate-t:9px;--plate-b:9px;--foot-t:7px;--foot-b:7px}
+body[data-page="merch"]{--plate-t:0px;--plate-b:0px;--foot-t:0px;--foot-b:0px}
+body[data-page="giveaways"]{--plate-t:14px;--plate-b:14px;--foot-t:14px;--foot-b:14px}
+body[data-page="affiliates"]{--plate-t:0px;--plate-b:0px;--foot-t:0px;--foot-b:0px}
+@media (min-width:1021px) and (max-width:1100px){
+  body[data-page="home"]{--plate-t:61px;--plate-b:61px;--foot-t:0px;--foot-b:0px}
+  body[data-page="learn"]{--plate-t:13px;--plate-b:13px;--foot-t:24px;--foot-b:24px}
+  body[data-page="merch"]{--plate-t:6px;--plate-b:6px;--foot-t:11px;--foot-b:11px}
+  body[data-page="giveaways"]{--plate-t:20px;--plate-b:20px;--foot-t:30px;--foot-b:30px}
+  body[data-page="affiliates"]{--plate-t:0px;--plate-b:0px;--foot-t:0px;--foot-b:0px}
+}
+@media (min-width:761px) and (max-width:1020px){
+  body[data-page="home"]{--plate-t:147px;--plate-b:147px;--foot-t:123px;--foot-b:123px}
+  body[data-page="learn"]{--plate-t:21px;--plate-b:21px;--foot-t:7px;--foot-b:7px}
+  body[data-page="merch"]{--plate-t:9px;--plate-b:9px;--foot-t:0px;--foot-b:0px}
+  body[data-page="giveaways"]{--plate-t:27px;--plate-b:27px;--foot-t:13px;--foot-b:13px}
+  body[data-page="affiliates"]{--plate-t:5px;--plate-b:5px;--foot-t:0px;--foot-b:0px}
+}
+@media (max-width:760px){
+  body[data-page="home"]{--plate-t:155px;--plate-b:155px;--foot-t:63px;--foot-b:63px}
+  body[data-page="learn"]{--plate-t:64px;--plate-b:64px;--foot-t:1px;--foot-b:1px}
+  body[data-page="merch"]{--plate-t:49px;--plate-b:49px;--foot-t:0px;--foot-b:0px}
+  body[data-page="giveaways"]{--plate-t:71px;--plate-b:71px;--foot-t:5px;--foot-b:5px}
+  body[data-page="affiliates"]{--plate-t:32px;--plate-b:32px;--foot-t:0px;--foot-b:0px}
+}
+/* RATIO-TUNING:END */

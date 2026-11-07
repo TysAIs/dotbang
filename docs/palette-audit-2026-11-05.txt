@@ -1,0 +1,66 @@
+dotBANG site — palette audit receipt
+=====================================
+
+Surface: every delivered page of the site in this commit (index + 4 subpages),
+at the four layout regions the stylesheet defines (1440x900, 1024x768, 820x1180,
+390x844). Full-page renders, real Chromium. Nothing here is a layout intention:
+each number is the classification of the delivered pixels.
+
+Checker:  dotBANG brand pack, tools/audit_palette.py (BAND constants, §3 of
+          PALETTE-SPEC-2026-11-05.md)
+Render:   dotBANG brand pack, tools/render.py (same config the audit was run on)
+Solver:   scripts/ratio_solve.py in this repo writes the RATIO-TUNING block in
+          assets/style.css; these are the numbers it lands on.
+
+Reproduce from the brand pack directory:
+  python3 tools/render.py cfg.json          # pages x [1440,1024,820,390]
+  python3 tools/audit_palette.py --check <out>/*-full.png
+
+Bands: black 70-80, white 10-15, accent 4-14, pink 0-1, no fifth colour.
+
+Output of the check run:
+
+file                                      size  black%  white%  accent%  pink%  other%
+affiliates-1024-full.png            1024x1261    78.37   12.27    9.362  0.000   0.000
+affiliates-1440-full.png            1440x1316    75.64   14.46    9.909  0.000   0.000
+affiliates-390-full.png              780x3602    78.45   14.50    7.048  0.000   0.000
+affiliates-820-full.png              820x1275    76.68   14.49    8.824  0.000   0.000
+giveaways-1024-full.png             1024x1854    79.51   11.96    8.530  0.000   0.000
+giveaways-1440-full.png             1440x1869    79.52   11.99    8.493  0.000   0.000
+giveaways-390-full.png               780x4832    79.51   12.00    8.487  0.000   0.000
+giveaways-820-full.png               820x1838    79.51   11.97    8.521  0.000   0.000
+home-1024-full.png                  1024x6718    79.51   12.10    8.388  0.001   0.000
+home-1440-full.png                  1440x7236    79.50   11.99    8.510  0.001   0.000
+home-390-full.png                    780x18070   79.50   11.99    8.508  0.001   0.000
+home-820-full.png                    820x8512    79.52   11.98    8.502  0.001   0.000
+learn-1024-full.png                 1024x1703    79.51   12.01    8.485  0.000   0.000
+learn-1440-full.png                 1440x1715    79.49   11.95    8.562  0.000   0.000
+learn-390-full.png                   780x4504    79.50   11.97    8.528  0.000   0.000
+learn-820-full.png                   820x1689    79.48   11.99    8.529  0.000   0.000
+merch-1024-full.png                 1024x1538    79.46   12.05    8.486  0.000   0.000
+merch-1440-full.png                 1440x1562    79.07   12.55    8.383  0.000   0.000
+merch-390-full.png                   780x4266    79.50   12.92    7.589  0.000   0.000
+merch-820-full.png                   820x1525    79.45   12.61    7.940  0.000   0.000
+
+PASS affiliates-1024-full.png
+PASS affiliates-1440-full.png
+PASS affiliates-390-full.png
+PASS affiliates-820-full.png
+PASS giveaways-1024-full.png
+PASS giveaways-1440-full.png
+PASS giveaways-390-full.png
+PASS giveaways-820-full.png
+PASS home-1024-full.png
+PASS home-1440-full.png
+PASS home-390-full.png
+PASS home-820-full.png
+PASS learn-1024-full.png
+PASS learn-1440-full.png
+PASS learn-390-full.png
+PASS learn-820-full.png
+PASS merch-1024-full.png
+PASS merch-1440-full.png
+PASS merch-390-full.png
+PASS merch-820-full.png
+
+20/20 surfaces in band
