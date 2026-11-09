@@ -22,10 +22,10 @@ usage:
 import asyncio, base64, importlib.util, json, os, pathlib, shutil, subprocess, sys, time, urllib.request
 
 SITE = str(pathlib.Path(__file__).resolve().parent.parent)
-BRAND = os.environ.get("DOTBANG_BRAND", "~/.hermes/shared/dotbang-brand-2026-11-05")
+BRAND = os.environ.get("DOTBANG_BRAND", os.path.expanduser("~/.hermes/shared/dotbang-brand-2026-11-05"))
 OUT = os.environ.get("DOTBANG_RATIO_OUT",
                      os.path.expanduser("~/.hermes/cache/scratch/ratio-solve"))
-CHROME = "~/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome"
+CHROME = os.environ.get("DOTBANG_CHROME", os.path.expanduser("~/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome"))
 PORT = 9452
 PROFILE = os.path.expanduser("~/.hermes/cache/scratch/dbx-tune/chrome-profile")
 
